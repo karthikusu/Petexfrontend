@@ -1,0 +1,21 @@
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 200px;
+    margin-top: 20px;
+    
+  }
+  
+  .footer-column {
+    flex: 1;
+  }
+
+  .footer{
+    background-color: rgb(31, 26, 58);
+    height: 350px;
+  }
+  .footer-bottom{
+    margin-left: 10px;
+  }
+  /* Add more styling as needed */
+  
