@@ -1,0 +1,17 @@
+.offers-header {
+    text-align: center;
+    margin: 20px 0;
+    
+  }
+  
+  .offers-header .line {
+    display: inline-block;
+    width: 40%;
+    border-top: 2px solid black;
+    margin-top: 5px;
+  }
+  
+  .offers-header span {
+    display: inline-block;
+    padding: 0 10px;
+  }

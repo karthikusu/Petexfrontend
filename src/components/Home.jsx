@@ -30,6 +30,7 @@ import DW from '../assets/Dogwinter.jpeg';
 import DJ from '../assets/dogjacket.jpg';
 import PC from '../assets/petcloths.jpg';
 import DB from '../assets/Dogbeds.jpg';
+import RC from '../assets/rabitcloths.jpg';
 import Grooming from '../assets/grooming.jpg';
 import healthcare from '../assets/healthcare.jpeg';
 import Breeding from '../assets/Dogbreeds.jpg';
@@ -37,7 +38,7 @@ import Sixty from '../assets/sixty.jpg';
 import Fortyfive from '../assets/fortyfive.jpg';
 import fiftyrabits from '../assets/fiftrabits.jpeg';
 import fiftyfood from '../assets/fiftyfood.jpeg';
-import RC from '../assets/rabitcloths.jpg';
+
 import cateating from '../assets/cateating.mp4';
 import grooming from '../assets/grooming.mp4';
 import dogwalking from '../assets/dogwalking.mp4';
@@ -63,9 +64,9 @@ function Home() {
     { name: "Dog", url: "https://www.dogwebsite.com" },
     { name: "Cat", url: "https://www.catwebsite.com" },
     { name: "Horse", url: "https://www.horsewebsite.com" },
-    { name: "Rabit", url: "https://www.dogwebsite.com" },
+    { name: "Rabit", url: "rabits" },
     { name: "Cow", url: "https://www.catwebsite.com" },
-    { name: "Pig", url: "https://www.horsewebsite.com" },
+    { name: "Elephants", url: "https://www.horsewebsite.com" },
     { name: "Goat & Sheep", url: "https://www.dogwebsite.com" },
     { name: "Poultry", url: "https://www.catwebsite.com" },
     { name: "Birds", url: "https://www.horsewebsite.com" },
@@ -95,7 +96,7 @@ function Home() {
       <body>
       <NavigationBar />
     <div className="Deals" style={{ marginTop: '90px', marginLeft: '5px', marginRight: '5px' }}>
-          <a href="" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/rabits" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={rabitImage} alt="rabits" />
             <p style={{ marginLeft: '67px' }}><b>Rabits</b></p>
           </a>
@@ -153,9 +154,9 @@ function Home() {
       </div>
 
       <div class="offers-header" >
-      <hr class="line" />
+      <hr class="line" style={{marginLeft:"100px", width:"200px"}}/>
       <span> <h3>Our Best Deals</h3></span>
-      <hr class="line"/>
+      <hr class="line" style={{marginRight:"100px", width:"200px"}}/>
       </div>
 
       <div class='sellercard'>
@@ -188,9 +189,9 @@ function Home() {
     
   
       <div class="offers-header" >
-      <hr class="line" />
+      <hr class="line" style={{marginLeft:"100px", width:"200px"}}/>
       <span> <h3>Our Services</h3></span>
-      <hr class="line"/>
+      <hr class="line" style={{marginRight:"100px", width:"200px"}}/>
       </div>
 
       <div class='sellercard'>

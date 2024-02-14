@@ -123,6 +123,7 @@ function NavigationBar() {
                 <b style={{color:"white", marginLeft:"10px"}}>About</b>
               </Link>
             </li>
+            
           </ul>
           <div className="nav-item dropdown" style={{marginLeft:"40px"}}>
         <button

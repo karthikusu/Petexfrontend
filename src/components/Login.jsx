@@ -1,75 +1,59 @@
 import React, { useState } from 'react';
-import BG from '../assets/Loginbg.png';
-import Loginstyle from './Loginstyle.css';
+import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom';
+import './Loginstyle.css';
+import BG2 from '../assets/Loginbg.png';
 
-function Login() {
-  // State variables to store email, password, and validation errors
+const Login = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const [pwd, setPwd] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Clear previous error messages
-    setEmailError('');
-    setPasswordError('');
-
-    // Email validation
-    if (!email) {
-      setEmailError('Email is required');
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      setEmailError('Invalid email address');
-    }
-
-    // Password validation
-    if (!password) {
-      setPasswordError('Password is required');
-    } else if (password.length < 6) {
-      setPasswordError('Password must be at least 6 characters long');
-    }
-
-    // If no errors, proceed with form submission
-    if (!emailError && !passwordError) {
-      console.log('Form submitted:', { email, password });
-      // You can add further logic here, such as sending a request to the server
+    try {
+      const response = await axios.post('http://localhost:9000/api/users/login', { email, pwd });
+      if (response.status === 200) {
+        navigate('/'); // Redirect to dashboard or home page
+      } else {
+        setError('Invalid email or password');
+      }
+    } catch (error) {
+      setError('Error logging in');
     }
   };
 
   return (
-    <div className='backgroundContainer' style={{backgroundImage:`url(${BG})`}}>
-  <div className='formContainer'>
-    <form onSubmit={handleSubmit} style={{ backgroundColor: 'transparent', borderRadius: '8px', padding: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.6)', width: "350px",height:"250px", marginLeft: "20%", color: "white", marginTop: "80px", marginBottom: "80px" }}>
-      <h2>Login</h2>
-      <div style={{ marginBottom: '10px' }}>
-        <label>Email:</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
-        />
-        {emailError && <span style={{ color: 'red' }}>{emailError}</span>}
-      </div>
-      <div style={{ marginBottom: '10px' }}>
-        <label>Password:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
-        />
-        {passwordError && <span style={{ color: 'red' }}>{passwordError}</span>}
-      </div>
-      <button type="submit" style={{ backgroundColor: 'darkmagenta', color: 'white', padding: '10px 20px', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>Login</button>
-      <p>Don't have account ?<a href="register" style={{textDecoration:"none", color:"white"}}>Register</a></p>
-    </form>
-  </div>
-</div>
-
     
+      <div  className="backgroundContainer" style={{ backgroundImage: `url(${BG2})`, height: "800px", color:"white" }}>
+      <div className='formContainer'>
+      <form onSubmit={handleSubmit} 
+      style={{backgroundColor:"transparent", width:"350px", height:"350px", marginLeft:"20%",borderRadius:"8px", marginTop:"100px", boxShadow:"0 4px 8px rgba(0, 0, 0, 0.8)"}} >
+        <h2>Login</h2>
+        <p>Email :</p>
+        <p><input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} 
+          style={{marginLeft:"", width:"300px", height:"25px"}}/></p>
+        <p>Password :</p>
+        <p><input type="password" placeholder="Password" value={pwd} onChange={(e) => setPwd(e.target.value)} 
+          style={{marginLeft:"", width:"300px", height:"25px"}}/></p>
+        <button type="submit"
+        style={{backgroundColor:"red", borderColor:"transparent", borderRadius:"6px", height:"25px", width:"100px"}}>Login</button>
+        {error && <div style={{color:"red", marginTop:"10px"}}>{error}</div>}
+
+        <div>
+          <p>
+        <Link to="/forgetpassword" style={{textDecoration:"none", color:"white", marginTop:"50px"}}>Forgot Password?</Link>
+        </p>
+      </div>
+      <div>
+        <Link to="/register"  style={{textDecoration:"none", color:"white"}}>Register</Link>
+      </div>
+      </form>
+      
+      </div>
+    </div>
   );
-}
+};
 
 export default Login;
