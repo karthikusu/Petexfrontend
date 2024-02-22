@@ -1,0 +1,11 @@
+.backgroundContainer {
+    
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+  }
+  
+  .formContainer {
+    position: fixed;
+  }
+  

@@ -1,0 +1,86 @@
+
+.contactus{
+    background-image: url("https://images.pexels.com/photos/1090408/pexels-photo-1090408.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-repeat: no-repeat; width: 100%; height: 100vh;
+    background-size: cover; position: fixed;
+}
+
+.contactus h1{
+    margin-top: 10%; margin-left: 35%; font-size: 3rem; font-weight: 500; 
+    font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 225, 2);
+}
+
+
+.contact-box{
+    display: flex;
+    margin-top: 200px;
+    margin-left: 30%;
+    background-size: auto;
+    
+}
+.contact-left{
+    flex-basis: 50%; padding: 40px 60px; margin-top: -12%; color: black;
+    
+}
+
+.contact-right{
+    flex-basis: 40%; padding: 40px; border: none; margin-top: -12%; color: rgb(7, 7, 7);
+}
+
+
+.contact-left input{
+    display: grid; margin-top: 0.1%; width: 90%; height: 4vh; font-size: 110%;
+    padding: 15px; border: 1px solid black; border-radius: 3px; margin-left: 5%;
+}
+.contact-left textarea {
+    display: grid;
+    margin-top: 2%;
+    width: 85%;
+    height: 10vh; 
+    font-size: larger;
+    padding: 2px 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-left: 5%;
+}
+
+/* Add this style to fix the z-index issue with the button */
+.contact-left textarea,
+.contact-left button {
+    position: relative;
+    z-index: 1;
+}
+
+
+.contact-left button{
+    border: transparent; border-radius: 8px; width: 100px; height: 35px; background-color: #04de45;
+    color: rgb(246, 241, 241); cursor: pointer; margin-left: 70%;margin-top: 8%;
+}
+
+.contact-left button:hover{
+    background-color: rgb(0, 21, 128);
+}
+
+.contact-left input button{
+    border: 1px solid black; border-radius: 20px;
+}
+
+.contact-right {
+    margin-left: -10%;
+    color: rgb(232, 232, 14); cursor: pointer; margin-left: 5%;
+
+}
+
+.contact-right .data{
+    margin-top: 5%; font-size: 1.3rem;
+    border: 1px solid black; border-radius: 20px;
+
+}
+
+iframe{
+    margin-top: 3%; border-radius: 1rem;
+}
+
+.Headroom{
+    height: 10vh;
+}

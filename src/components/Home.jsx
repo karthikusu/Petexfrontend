@@ -51,6 +51,8 @@ import doctor2 from '../assets/doctor3.png';
 import doctor3 from '../assets/doctor3.jpg';
 import doctor4 from '../assets/doctor4.jpg';
 import feeding from '../assets/feeding.jpg';
+import cow from '../assets/Cow.jpg';
+import camel from '../assets/camel1.jpg';
 
 
 import { useState } from 'react';
@@ -61,8 +63,8 @@ function Home() {
   const [filteredItems, setFilteredItems] = useState([]);
 
   const items = [
-    { name: "Dog", url: "https://www.dogwebsite.com" },
-    { name: "Cat", url: "https://www.catwebsite.com" },
+    { name: "Dog", url: "/Profiledog" },
+    { name: "Cat", url: "/Profilecat" },
     { name: "Horse", url: "https://www.horsewebsite.com" },
     { name: "Rabit", url: "rabits" },
     { name: "Cow", url: "https://www.catwebsite.com" },
@@ -96,40 +98,53 @@ function Home() {
       <body>
       <NavigationBar />
     <div className="Deals" style={{ marginTop: '90px', marginLeft: '5px', marginRight: '5px' }}>
-          <a href="/rabits" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/rabithome" style={{ textDecoration: 'none', color: 'black', marginLeft:"15px" }}>
             <img src={rabitImage} alt="rabits" />
-            <p style={{ marginLeft: '67px' }}><b>Rabits</b></p>
+            <p style={{ marginLeft: '40px' }}><b>Rabits</b></p>
           </a>
-          <a href="" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/doghome" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Dog} alt="rabits"/>
-            <p style={{ marginLeft: '70px' }}><b>Dog</b></p>
+            <p style={{ marginLeft: '43px' }}><b>Dog</b></p>
           </a>
-          <a href="" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/cathome" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Cat} alt="rabits"/>
-            <p style={{ marginLeft: '70px' }}><b>Cat</b></p>
+            <p style={{ marginLeft: '45px' }}><b>Cat</b></p>
           </a>
-          <a href="" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/chickenhome" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Poultry} alt="rabits" />
-            <p style={{ marginLeft: '67px' }}><b>Poultry</b></p>
+            <p style={{ marginLeft: '37px' }}><b>Poultry</b></p>
           </a>
-          <a href="" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/birdhome" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Bird} alt="rabits" />
-            <p style={{ marginLeft: '67px' }}><b>Birds</b></p>
+            <p style={{ marginLeft: '40px' }}><b>Birds</b></p>
           </a>
-          <a href="" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/horsehome" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Horse} alt="rabits"/>
-            <p style={{ marginLeft: '67px' }}><b>Horse</b></p>
+            <p style={{ marginLeft: '40px' }}><b>Horse</b></p>
           </a>
-          <a href="" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/goatsheapgoat" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Sheep} alt="rabits"/>
-            <p style={{ marginLeft: '35px' }}><b>Goats & Sheeps</b></p>
+            <p style={{ marginLeft: '10px' }}><b>Goats & Sheeps</b></p>
           </a>
-          <a href="" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/elephanthome" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Elephant} alt="rabits" />
-            <p style={{ marginLeft: '58px' }}><b>Elephants</b></p>
+            <p style={{ marginLeft: '30px' }}><b>Elephants</b></p>
+          </a>
+          <a href="/cowhome" style={{ textDecoration: 'none', color: 'black' }}>
+            <img src={cow} alt="rabits" />
+            <p style={{ marginLeft: '47px' }}><b>Cow</b></p>
+          </a>
+          <a href="/camelhome" style={{ textDecoration: 'none', color: 'black' }}>
+            <img src={camel} alt="rabits" />
+            <p style={{ marginLeft: '40px' }}><b>Camel</b></p>
           </a>
         
         </div>
+      {/* <div 
+      style={{backgroundColor: "rgb(31, 26, 58)", width:"100%", height:"80px", color:"white", textAlign:"center", fontFamily:"serif"}}>
+        <h1>Welcome To PETEX</h1>
+        <h5 style={{fontFamily:"unset"}}>We care more about your pets</h5>
+        </div> */}
         <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel" style={{ marginTop: "10px" }}>
       <Carousel interval={2000}>
         <Carousel.Item>
@@ -153,73 +168,65 @@ function Home() {
         </Carousel>
       </div>
 
-      <div class="offers-header" >
-      <hr class="line" style={{marginLeft:"100px", width:"200px"}}/>
-      <span> <h3>Our Best Deals</h3></span>
-      <hr class="line" style={{marginRight:"100px", width:"200px"}}/>
-      </div>
+      <div class="offers-header" style={{ textAlign: "center", margin: "20px 0" }}>
+  <hr class="line" style={{ width: "200px" }} />
+  <h3>Our Best Deals</h3>
+  <hr class="line" style={{ width: "200px" }} />
+</div>
 
-      <div class='sellercard'>
-        <div class='card'>
-        <img src={Sixty} alt="Cat" />
-          {/* <div class='card-info'>
-            Card 1 Information
-          </div> */}
-        </div>
-        <div class='card'>
-        <img src={Fortyfive} alt="Cat" />
-          {/* <div class='card-info'>
-          Card 2 Information
-          </div> */}
-        </div>
-        <div class='card'>
-        <img src={fiftyrabits} alt="Cat" />
-          {/* <div class='card-info'>
-            Card 3
-          </div> */}
-        </div>
-        <div class='card'>
-        <img src={fiftyfood} alt="Cat" />
-          {/* <div class='card-info'>
-          Card 4
-          </div> */}
-        </div>
-      </div>
+<div className="sellercard" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginBottom: "20px" }}>
+  {/* Deal Cards */}
+  <div className="card" style={{ margin: "0 10px", position: "relative" }}>
+    <img src={Sixty} alt="Cat" style={{ maxWidth: "100%", height: "auto" }} />
+  </div>
+  <div className="card" style={{ margin: "0 10px", position: "relative" }}>
+    <img src={Fortyfive} alt="Cat" style={{ maxWidth: "100%", height: "auto" }} />
+  </div>
+  <div className="card" style={{ margin: "0 10px", position: "relative" }}>
+    <img src={fiftyrabits} alt="Cat" style={{ maxWidth: "100%", height: "auto" }} />
+  </div>
+  <div className="card" style={{ margin: "0 10px", position: "relative" }}>
+    <img src={fiftyfood} alt="Cat" style={{ maxWidth: "100%", height: "auto" }} />
+  </div>
+</div>
 
-    
-  
-      <div class="offers-header" >
-      <hr class="line" style={{marginLeft:"100px", width:"200px"}}/>
-      <span> <h3>Our Services</h3></span>
-      <hr class="line" style={{marginRight:"100px", width:"200px"}}/>
-      </div>
+<div class="offers-header" style={{ textAlign: "center", margin: "20px 0" }}>
+  <hr class="line" style={{ width: "200px" }} />
+  <h3>Our Services</h3>
+  <hr class="line" style={{ width: "200px" }} />
+</div>
 
-      <div class='sellercard'>
-        <div class='card'>
-        <img src={Grooming} alt="Cat" />
-          <div class='card-info'>
-            <b>Grooming</b>
-          </div>
-        </div>
-        <div class='card'>
-        <img src={healthcare} alt="Cat" />
-          <div class='card-info'>
-          <b>Health Care</b>
-          </div>
-        </div>
-        <div class='card'>
-        <img src={Breeding} alt="Cat" />
-          <div class='card-info'>
-            <b>Breeding</b>
-          </div>
-        </div>
-        <div class='card'>
-        <img src={feeding} alt="Cat" />
-          <div class='card-info'>
-          <b>Feeding</b> 
-          </div>
-        </div>
-      </div>
+<div className="sellercard" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginBottom: "20px" }}>
+  {/* Service Cards */}
+  <div className="card" style={{ margin: "0 10px", position: "relative" }}>
+    <img src={Grooming} alt="Cat" style={{ maxWidth: "100%", height: "auto" }} />
+    <div class='card-info'>
+      <b>Grooming</b>
+    </div>
+  </div>
+  <div className="card" style={{ margin: "0 10px", position: "relative" }}>
+    <img src={healthcare} alt="Cat" style={{ maxWidth: "100%", height: "auto" }} />
+    <div class='card-info'>
+      <b>Health Care</b>
+    </div>
+  </div>
+  <div className="card" style={{ margin: "0 10px", position: "relative" }}>
+    <img src={Breeding} alt="Cat" style={{ maxWidth: "100%", height: "auto" }} />
+    <div class='card-info'>
+      <b>Breeding</b>
+    </div>
+  </div>
+  <div className="card" style={{ margin: "0 10px", position: "relative" }}>
+    <img src={feeding} alt="Cat" style={{ maxWidth: "100%", height: "250px" }} />
+    <div class='card-info'>
+      <b>Feeding</b> 
+    </div>
+  </div>
+</div>
+
+
+{/* Add other sections similarly */}
+
       <div>
       <video 
       src={dogwalking} 
@@ -243,28 +250,28 @@ function Home() {
 
       <div class='sellercard'>
         <div class='card' style={{borderColor:"transparent"}}>
-        <img src={DJ} alt="Cat" />
+        <a href='/userlogin'> <img src={DJ} alt="Cat" />
           <div class='card-info'>
-          <b>Jackets</b>
-        </div>
+          <b style={{textDecoration:"none", color:"black"}}>Jackets</b>
+        </div></a>
       </div>
       <div class='card' style={{borderColor:"transparent"}}>
-        <img src={DW} alt="Cat" />
+      <a href='/userlogin'><img src={DW} alt="Cat" />
         <div class='card-info'>
-          <b>Winter collection</b>
-        </div>
+          <b style={{textDecoration:"none", color:"black"}}>Winter collection</b>
+        </div></a>
       </div>
       <div class='card' style={{borderColor:"transparent"}}>
-        <img src={DB} alt="Cat" />
+      <a href='/userlogin'> <img src={DB} alt="Cat" />
           <div class='card-info'>
-            <b>Beds and beadsheets</b>
-          </div>
+            <b style={{textDecoration:"none", color:"black"}}>Beds and beadsheets</b>
+          </div></a>
       </div>
         <div class='card' style={{borderColor:"transparent"}}>
-          <img src={RC} alt="Cat" />
+        <a href='/userlogin'> <img src={RC} alt="Cat" />
           <div class='card-info'>
-            <b>Cloths</b>
-          </div>
+            <b style={{textDecoration:"none", color:"black"}}>Cloths</b>
+          </div></a>
         </div>
       </div>
 
@@ -276,28 +283,28 @@ function Home() {
 
       <div class='sellercard'>
         <div class='card' style={{borderRadius:"50%",borderColor:"transparent"}}>
-        <img src={kong} alt="kongo" style={{borderRadius:"50%"}}/>
+        <a href='/userlogin'><img src={kong} alt="kongo" style={{borderRadius:"50%"}}/>
           <div class='card-info'>
-            <b>Kong</b>
-          </div>
+            <b style={{textDecoration:"none", color:"black"}}>Kong</b>
+          </div></a>
         </div>
         <div class='card' style={{borderRadius:"50%", borderColor:"transparent"}}>
-        <img src={birdtoys} alt="birdtoys" style={{borderRadius:"50%"}}/>
+        <a href='/userlogin'><img src={birdtoys} alt="birdtoys" style={{borderRadius:"50%"}}/>
           <div class='card-info'>
-          <b>Bird Toys</b>
-          </div>
+          <b style={{textDecoration:"none", color:"black"}}>Bird Toys</b>
+          </div></a>
         </div>
         <div class='card' style={{borderRadius:"50%", borderColor:"transparent"}}>
-        <img src={bone} alt="bone" style={{borderRadius:"50%"}} />
+        <a href='/userlogin'><img src={bone} alt="bone" style={{borderRadius:"50%"}} />
           <div class='card-info'>
-            <b>Bone Toys</b>
-          </div>
+            <b style={{textDecoration:"none", color:"black"}}>Bone Toys</b>
+          </div></a>
         </div>
         <div class='card' style={{borderRadius:"50%", borderColor:"transparent"}}>
-        <img src={hamster} alt="hamster" style={{borderRadius:"50%"}}/>
+        <a href='/userlogin'><img src={hamster} alt="hamster" style={{borderRadius:"50%"}}/>
           <div class='card-info'>
-          <b>Hamster</b> 
-          </div>
+          <b style={{textDecoration:"none", color:"black"}}>Hamster</b> 
+          </div></a>
         </div>
       </div>
 
@@ -308,22 +315,22 @@ function Home() {
       </div>
     
     <div class="home__images1" style={{marginTop: "30px"}}>
-    <a href='#' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={CF} 
+    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={CF} 
     style={{ transform: "rotate(10deg)", height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)" }}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b> DogFood</b></h3></a>
-    <a href='#' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={DF} 
+    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={DF} 
     style={{transform: "rotate(10deg)", height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)"}}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b>Cat Food</b></h3></a>
-    <a href='#' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={CT} 
+    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={CT} 
     style={{transform: "rotate(10deg)", height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)"}}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b>Cat Toys</b></h3></a>
-    <a href='#' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={PC} 
+    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={PC} 
     style={{transform: "rotate(10deg)", height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)"}}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b>Cloths</b></h3></a>
-    <a href='#' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={rabitfood} 
+    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={rabitfood} 
     style={{transform: "rotate(10deg)", height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)"}}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b>Rabit Food</b></h3></a>
-    <a href='#' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={horsefood} 
+    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={horsefood} 
     style={{transform: "rotate(10deg)",height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)"}}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b>Horse Food</b></h3></a>
     </div>

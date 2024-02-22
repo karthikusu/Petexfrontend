@@ -1,0 +1,161 @@
+/* Add your global styles here */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Sidebar */
+  #sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #e9ecf0; /* Sidebar background color */
+    color: #ecf0f1; /* Text color for the sidebar */
+    padding-top: 20px;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #ecf0f1; /* Text color for the brand */
+    text-decoration: none;
+  }
+  
+  .brand i {
+    font-size: 1.5rem;
+    margin-right: 5px;
+  }
+  
+  .side-menu {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .side-menu li {
+    margin-bottom: 10px;
+  }
+  
+  .side-menu a {
+    color: #ecf0f1; /* Text color for the menu items */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .side-menu a:hover {
+    background-color: #34495e; /* Hover background color for the menu items */
+  }
+  
+  /* Content */
+  #content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  nav a {
+    color: #2c8dee; /* Text color for the links in the nav bar */
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  /* Main Content */
+  .main {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .head-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .left h1 {
+    margin-right: 20px;
+  }
+  
+  .breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .breadcrumb li {
+    margin-right: 5px;
+    color: #3498db; /* Text color for the breadcrumb links */
+  }
+  
+  /* Order Table */
+  .table-data {
+    width: 100%;
+  }
+  
+  .order {
+    margin-bottom: 30px;
+  }
+  
+  .order table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .order th,
+  .order td {
+    border: 1px solid #bdc3c7; /* Border color for the table cells */
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .order th {
+    background-color: #3498db; /* Header background color */
+    color: #ecf0f1; /* Text color for the header cells */
+  }
+  
+  .order tbody tr:nth-child(even) {
+    background-color: #ecf0f1; /* Background color for even rows */
+  }
+  
+  .order .status {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .status.completed {
+    background-color: #2ecc71; /* Completed status color */
+    color: #ecf0f1;
+  }
+  
+  .status.pending {
+    background-color: #f39c12; /* Pending status color */
+    color: #ecf0f1;
+  }
+  
+  .status.process {
+    background-color: #3498db; /* Process status color */
+    color: #ecf0f1;
+  }
+  

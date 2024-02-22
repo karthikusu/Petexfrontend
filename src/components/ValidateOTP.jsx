@@ -48,7 +48,7 @@ const ValidateOTP = () => {
     <div className="backgroundContainer" style={{ backgroundImage: `url(${BG2})`, height: "100vh", color:"white" }}>
       <div className='formContainer'>
       <form onSubmit={handleSubmit}
-      style={{backgroundColor:"transparent", width:"350px", height:"280px", marginLeft:"20%",borderRadius:"8px", marginTop:"100px", boxShadow:"0 4px 8px rgba(0, 0, 0, 0.8)"}} >
+      style={{backgroundColor:"transparent", width:"350px", height:"280px", marginLeft:"130%",borderRadius:"8px", marginTop:"10px", boxShadow:"0 4px 8px rgba(0, 0, 0, 0.8)"}} >
       <h2>Validate OTP</h2>
       <p><label>Email:</label></p>
        <p> <input

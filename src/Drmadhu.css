@@ -1,0 +1,77 @@
+.DoctorProfileCard_card__EWnQO {
+    display: flex;
+    flex-direction: row;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid;
+    width: 40%;
+    margin-left: 30%;
+    
+  }
+  
+  .DoctorProfileCard_profilePicBox__TG4pX {
+    margin-right: 20px;
+  }
+  
+  .DoctorProfileCard_profilePic__rJCCa {
+    border-radius: 50%;
+  }
+  
+  .DoctorProfileCard_info__Oiilv {
+    flex: 1;
+  }
+  
+  .DoctorProfileCard_infoText__WPFu4 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .DoctorProfileCard_infoImage__YqxdW {
+    margin-right: 10px;
+  }
+  
+  .DoctorProfileCard_row__ChdwW {
+    display: flex;
+    align-items: center;
+  }
+  
+  .DoctorProfileCard_row__ChdwW h1,
+  .DoctorProfileCard_row__ChdwW h2,
+  .DoctorProfileCard_row__ChdwW h3,
+  .DoctorProfileCard_row__ChdwW h4 {
+    margin: 0;
+  }
+  
+  .DoctorProfileCard_languages__b2jER h3 {
+    margin: 0;
+    text-transform: capitalize;
+  }
+  
+  .DoctorProfileCard_recommendation__XSQno {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .DoctorProfileCard_recommendation__XSQno img {
+    margin-right: 5px;
+  }
+  
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+    .DoctorProfileCard_card__EWnQO {
+      flex-direction: column;
+    }
+  
+    .DoctorProfileCard_profilePicBox__TG4pX {
+      margin-right: 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+  
+  

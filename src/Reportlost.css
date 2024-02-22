@@ -1,0 +1,50 @@
+/* Style for the form container */
+.ott {
+    width: 50%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    border: 1px ;
+    
+  }
+  
+  
+  .form-label1,
+  .form-labe2,
+  .form-labe3,
+  .form-labe5,
+  .form-labe7,
+  .form-labe8,
+  .form-labe9,
+  .form-labe10 {
+    margin-bottom: 10px; /* Add space below each label */
+    display: inline-block; /* Make labels inline with input fields */
+    width: 150px; 
+  }
+  
+  
+  .form-control {
+    width: calc(100% - 160px); 
+    margin-bottom: 10px; /* Add space below each input field */
+    padding: 8px; /* Add padding */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 4px; /* Add border-radius */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+  }
+  
+  
+  .btn-primary {
+    background-color: #007bff; 
+    color: #fff; 
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+    margin-left: 50%;
+    
+  }
+  
+  /* Hover effect for submit button */
+  .btn-primary:hover {
+    background-color: #0056b3; 
+  }
+  

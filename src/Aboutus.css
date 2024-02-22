@@ -1,0 +1,79 @@
+.image12{
+    width: 95%;
+    height: 60vh;
+    margin-left: 28px;
+    padding: 8px;
+    border-radius: 8px;
+}
+.Anarghya{
+   
+    padding: 12px;
+    
+}
+.Anarghya h1{
+    margin-left: 440px;
+}
+.comm{
+    padding: 12px;
+    margin: 25px;
+}
+.comm h1{
+    margin-left: 330px;
+}
+.matter {
+    margin-left: 100px;
+    padding: 15px;
+    font-size: large;
+    
+}
+.uniqueideas{
+    
+    display: flex;
+    justify-content: space-around;
+    gap: 2px;
+    align-items: center;
+}
+.uniqueideas p {
+    font-size: large;
+}
+.unique{
+    width: 450px;
+    border-radius: 20px;
+}
+.column{
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    padding-top: 22px;
+    gap: 2px;
+    border-radius: 10px;
+    margin: 50px auto;
+    background-color: blanchedalmond;
+          
+}
+.column p {
+    font-size: large;
+}
+
+.imgs{
+    width: 15%;
+    padding: 12px;
+}
+.clients h1{
+    margin-left: 600px ;
+    padding: 10px;
+}
+.ourteam{
+    margin-left: 400px;
+    padding: 10px;
+}
+.team{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+.teamimage{
+    width: 100%;
+    border-radius: 20px;
+
+}

@@ -4,6 +4,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import './Loginstyle.css';
 import BG2 from '../assets/Loginbg.png';
 
+
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [pwd, setPwd] = useState('');
@@ -15,7 +17,8 @@ const Login = () => {
     try {
       const response = await axios.post('http://localhost:9000/api/users/login', { email, pwd });
       if (response.status === 200) {
-        navigate('/'); // Redirect to dashboard or home page
+        navigate('/userhome'); // Redirect to dashboard or home page
+
       } else {
         setError('Invalid email or password');
       }
@@ -47,7 +50,7 @@ const Login = () => {
         </p>
       </div>
       <div>
-        <Link to="/register"  style={{textDecoration:"none", color:"white"}}>Register</Link>
+        <Link to="/userregister"  style={{textDecoration:"none", color:"white"}}>Register</Link>
       </div>
       </form>
       

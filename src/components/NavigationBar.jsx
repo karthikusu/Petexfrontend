@@ -5,7 +5,7 @@ import cart from '../assets/shopping-cart.gif';
 import profile from '../assets/profile.gif';
 import homegif from '../assets/home.gif';
 import about from '../assets/information.gif';
-import NavigationBarstyle from './NavigationBarstyle.css';
+import './NavigationBarstyle.css';
 
 function NavigationBar() {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -14,20 +14,20 @@ function NavigationBar() {
 
   // Define your 'items' array here
   const items = [
-    { name: 'Cat', url: '/item1' },
-    { name: 'Dog', url: '/item2' },
-    { name: 'Rabit', url: '/item1' },
-    { name: 'Goat', url: '/item2' },
-    { name: 'Sheap', url: '/item1' },
-    { name: 'Poultry', url: '/item2' },
-    { name: 'Elephant', url: '/item1' },
-    { name: 'Birds', url: '/item2' },
-    { name: 'Toys', url: '/item1' },
-    { name: 'Food', url: '/item2' },
-    { name: 'Cloths', url: '/item1' },
-    { name: 'Grooming', url: '/item2' },
-    { name: 'Health & Care', url: '/item1' },
-    { name: 'Vet care', url: '/item2' },
+    { name: 'Cat', url: '/cathome' },
+    { name: 'Dog', url: '/doghome' },
+    { name: 'Rabit', url: '/rabithome' },
+    { name: 'Goat', url: '/goatsheaphome' },
+    { name: 'Sheap', url: '/goatsheaphome' },
+    { name: 'Poultry', url: '/chickenhome' },
+    { name: 'Elephant', url: '/elephanthome' },
+    { name: 'Birds', url: '/birdhome' },
+    { name: 'Toys', url: '/userlogin' },
+    { name: 'Food', url: '/userlogin' },
+    { name: 'Cloths', url: '/userlogin' },
+    { name: 'Grooming', url: '/userlogin' },
+    { name: 'Health & Care', url: '/userlogin' },
+    { name: 'Vet care', url: '/userlogin' },
     // Add more items as needed
   ];
 
@@ -38,15 +38,22 @@ function NavigationBar() {
   const handleOptionClick = (type) => {
     switch (type) {
       case 'Doctor':
+        window.location.href = '/doctorlogin';
+        break;
       case 'Vendor':
+        window.location.href = '/vendorlogin';
+        break;
       case 'Admin':
+        window.location.href = '/adminlogin';
+        break;
       case 'User':
-        window.location.href = '/login'; // Navigate to respective login page
+        window.location.href = '/userlogin';
         break;
       default:
         break;
     }
   };
+  
 
   const handleSearch = (event) => {
     const searchTerm = event.target.value;
@@ -64,7 +71,8 @@ function NavigationBar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: 'darkmagenta' }}>
+    <nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: "rgb(31, 26, 58)", height:"80px"
+    }}>
       <div className="container">
         <Link className="navbar-brand" to="/" style={{marginLeft:"-20px"}}>
           <img src={Petcare} alt="Petcare Logo" style={{ height: "50px", width: "50px", borderRadius: "50%" }} />
@@ -73,19 +81,19 @@ function NavigationBar() {
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/" style={{marginLeft:"40px"}}>
+              <Link className="nav-link" to="/" style={{marginLeft:"30px"}}>
                 <img src={homegif} alt="Home" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
                 <b style={{color:"white", marginLeft:"10px"}}>Home</b>
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/profile" style={{marginLeft:"40px"}}>
+              <Link className="nav-link" to="/products" style={{marginLeft:"30px"}}>
                 <img src={profile} alt="Profile" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
                 <b style={{color:"white", marginLeft:"10px"}}>Profile</b>
               </Link>
             </li>
 
-            <form className="form-inline my-2 my-lg-0" onSubmit={(e) => e.preventDefault()} style={{ marginLeft: "90px" }}>
+            <form className="form-inline my-2 my-lg-0" onSubmit={(e) => e.preventDefault()} style={{ marginLeft: "30px" }}>
           <input
             className="form-control mr-sm-2"
             type="search"
@@ -112,20 +120,20 @@ function NavigationBar() {
         )}
 
             <li className="nav-item">
-              <Link className="nav-link" to="/cart" style={{marginLeft:"40px"}}>
+              <Link className="nav-link" to="/contactus" style={{marginLeft:"30px"}}>
                 <img src={cart} alt="Cart" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
-                <b style={{color:"white", marginLeft:"10px"}}>Cart</b>
+                <b style={{color:"white", marginLeft:"10px"}}>Contact</b>
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about" style={{marginLeft:"40px"}}>
+              <Link className="nav-link" to="/aboutus" style={{marginLeft:"30px"}}>
                 <img src={about} alt="About" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
                 <b style={{color:"white", marginLeft:"10px"}}>About</b>
               </Link>
             </li>
             
           </ul>
-          <div className="nav-item dropdown" style={{marginLeft:"40px"}}>
+          <div className="nav-item dropdown" style={{marginLeft:"30px"}}>
         <button
               className="btn btn-outline-success my-2 my-sm-0 dropdown-toggle"
               onClick={handleDropdownClick}

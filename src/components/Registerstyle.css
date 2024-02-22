@@ -1,11 +1,11 @@
-.backgroundContainer {
+.backgroundContainer1 {
     
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
   }
   
-  .formContainer {
+  .formContainer1 {
     position: absolute;
   }
   

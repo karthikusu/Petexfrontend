@@ -55,9 +55,10 @@ const ConfirmPassword = () => {
   return (
     <div className="backgroundContainer" style={{ backgroundImage: `url(${BG2})`, height: "100vh", color:"white" }}>
       <div className='formContainer'>
-      <h2>Confirm Password</h2>
+     
       <form onSubmit={handleSubmit}
-       style={{backgroundColor:"transparent", width:"350px", height:"310px", marginLeft:"20%",borderRadius:"8px", marginTop:"100px", boxShadow:"0 4px 8px rgba(0, 0, 0, 0.8)"}}>
+       style={{backgroundColor:"transparent", width:"350px", height:"350px", marginLeft:"20%",borderRadius:"8px", marginTop:"100px", boxShadow:"0 4px 8px rgba(0, 0, 0, 0.8)"}}>
+         <h2>Confirm Password</h2>
         <p><label>Email:</label></p>
         <p><input
           type="email"

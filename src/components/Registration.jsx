@@ -160,12 +160,18 @@ function Registration() {
       newErrors.phno = 'Mobile Number is required';
     } else if (!/^\d+$/.test(phno)) {
       newErrors.phno = 'Mobile Number must contain only digits';
+    } else if (phno.length !== 10 || !/[6-9]/.test(phno.charAt(0))) {
+      newErrors.phno = 'Mobile Number must start with 6, 7, 8, or 9 and should be 10 digits';
     }
+    
     if (!alternativeNumber) {
       newErrors.alternativeNumber = 'Alternative Number is required';
     } else if (!/^\d+$/.test(alternativeNumber)) {
       newErrors.alternativeNumber = 'Alternative Number must contain only digits';
+    } else if (alternativeNumber.length !== 10 || !/[6-9]/.test(alternativeNumber.charAt(0))) {
+      newErrors.alternativeNumber = 'Alternative Number must start with 6, 7, 8, or 9 and should be 10 digits';
     }
+    
     if (!email) {
       newErrors.email = 'Email is required';
     } else if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email)) {
@@ -215,7 +221,8 @@ function Registration() {
           city,
         });
         console.log('Registration successful:', response.data);
-        navigate("/"); // Redirect after successful registration
+        window.alert('Registered successfully')
+        navigate("/userlogin"); // Redirect after successful registration
       } catch (error) {
         console.error('Registration failed:', error);
         // Handle error, such as displaying an error message to the user
@@ -224,15 +231,15 @@ function Registration() {
   };
 
   return (
-    <div className='backgroundContainer' style={{ backgroundImage: `url(${BG2})`, height: "1000px" }}>
-      <div className='formContainer'>
-        <form onSubmit={handleSubmit} style={{ backgroundColor: 'transparent', borderRadius: '8px', padding: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.6)', width: "700px", marginLeft: "10%", marginTop: "2%", color: "white", height: "820px" }}>
+    <div className='backgroundContainer1' style={{ backgroundImage: `url(${BG2})`, height: "1200px" }}>
+      <div className='formContainer1'>
+        <form onSubmit={handleSubmit} style={{ backgroundColor: 'transparent', borderRadius: '8px', padding: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.6)', width: "700px", marginLeft: "10%", marginTop: "2%", color: "white", backgroundSize:"absolute"}}>
           <h2>Registration</h2>
 
           {/* First row of input fields */}
           <div style={{ display: 'flex', marginBottom: '10px' }}>
             <div style={{ marginRight: '10px', flex: 1 }}>
-              <label htmlFor="disabledSelect" className="form-label" >PetType :</label>
+              <label htmlFor="disabledSelect" className="form-label" style={{marginTop:"-3%"}}>PetType :</label>
               <select id="disabledSelect" className="form-select" name="petType" value={petType} onChange={handleChange} style={{ width: "330px", height: "35px", borderRadius: '4px', border: '1px solid #ccc' }}>
                 <option value="">Select</option>
                 <option value="Dogs">Dogs</option>
@@ -247,7 +254,7 @@ function Registration() {
               </select>
               {errors.petType && <span style={{ color: 'red' }}>{errors.petType}</span>}
             </div>
-            <div style={{ flex: 1, marginLeft: "8%" }}>
+            <div style={{ flex: 1, marginLeft: "7%" }}>
               <label>Pet Name:</label>
               <input
                 type="text"
@@ -263,7 +270,7 @@ function Registration() {
 
           {/* Second row of input fields */}
           <div style={{ display: 'flex', marginBottom: '10px' }}>
-            <div style={{ marginRight: '10px', flex: 1 }}>
+            <div style={{ marginRight: '1px', flex: 1 }}>
               <label>Breed:</label>
               <input
                 type="text"

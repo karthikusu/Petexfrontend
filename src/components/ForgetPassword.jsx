@@ -31,12 +31,12 @@ const ForgetPassword = () => {
       <form onSubmit={handleSubmit}
        
       style={{backgroundColor:"transparent", width:"350px", height:"200px", marginLeft:"20%",borderRadius:"8px", marginTop:"100px", boxShadow:"0 4px 8px rgba(0, 0, 0, 0.8)"}}>
-        <h2>Forget Password</h2>
+        <h2 style={{color:"white", marginLeft:"10px"}}>Forget Password</h2>
         <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} 
-        style={{width:"300px", height:"25px", borderRadius:"5px", borderColor:"transparent"}}/>
+        style={{width:"300px", height:"35px", borderRadius:"5px", borderColor:"transparent", marginLeft:"10px"}}/>
         <p>
         <button type="submit" 
-        style={{backgroundColor:"red", borderColor:"transparent", borderRadius:"6px", height:"25px"}}>Generate OTP</button>
+        style={{backgroundColor:"red", borderColor:"transparent", borderRadius:"5px", height:"35px", marginLeft:"10px"}}>Generate OTP</button>
         {message && <div>{message}</div>}
         {error && <div style={{color:"red", marginTop:"10px"}}>{error}</div>}</p>
       </form>

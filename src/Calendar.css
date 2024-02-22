@@ -1,0 +1,33 @@
+.calendar-container {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .time-slots button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #f1f5a1;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .time-slots button.selected {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .success-message {
+    margin-top: 20px;
+    color: #28a745;
+    font-weight: bold;
+  }
+  
