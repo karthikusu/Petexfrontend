@@ -1,56 +1,70 @@
-Add this CSS to your styles.css or equivalent file
-.section-admin{
-    background-image: url("https://c4.wallpaperflare.com/wallpaper/981/204/987/simple-background-wallpaper-preview.jpg");
-    background-repeat: no-repeat; width: 100%; height: 100vh; background-position: center; background-size: cover;
-  }
+.adminlogin {
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/981/204/987/simple-background-wallpaper-preview.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.container-fluid {
+  margin-top: 2rem;
+}
+
+.hari {
+  width: -50rem;
+  left: 115%;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); 
+}
+
+.card-title {
+  font-size: 2rem;
+  color: #1976D2;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  font-size: 1rem;
+  color: #1976D2;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #1976D2;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #1565C0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+  width: 50%;
   
-    
-    form {
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-    
-    label {
-      font-size: 16px;
-      color: #1976D2;
-    }
-    
-    .input-group {
-      margin-bottom: 20px;
-    }
-    
-    .form-control {
-      width: 100%;
-      padding: 10px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    
-    .btn-primary {
-      background-color: #1976D2;
-      color: #fff;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    
-    .btn-primary:hover {
-      background-color: #1565C0;
-    }
-    
-    p {
-      font-size: 14px;
-      margin: 0;
-    }
-    
-    .text-center {
-      text-align: center;
-    }
-    
-    /* Add more styles as needed */
-    
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+

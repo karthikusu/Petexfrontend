@@ -10,7 +10,7 @@ const HomeVisit = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:9010/petex/getAll");
+      const response = await fetch("http://localhost:9027/petex/getAll");
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -27,7 +27,7 @@ const HomeVisit = () => {
     );
     if (confirmDelete) {
       try {
-        axios.delete(`http://localhost:9092/petex/delete/${customerId}`);
+        axios.delete(`http://localhost:9027/petex/delete/${customerId}`);
         fetchData();
       } catch (error) {
         console.error("Error in deleting:", error);

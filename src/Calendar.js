@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import Navpet from "./Navpet";
 import './Calendar.css'; // Assuming you have a CSS file for styling
 
 const Calendar = ({ bookSlot, isSlotAvailable }) => {
@@ -65,7 +64,6 @@ const Calendar = ({ bookSlot, isSlotAvailable }) => {
 
         
         <div className="calendar-container">
-            <Navpet/>
             <h2>Select Date:</h2>
             <input
                 type="date"

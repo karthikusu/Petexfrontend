@@ -98,43 +98,43 @@ function Home() {
       <body>
       <NavigationBar />
     <div className="Deals" style={{ marginTop: '90px', marginLeft: '5px', marginRight: '5px' }}>
-          <a href="/rabithome" style={{ textDecoration: 'none', color: 'black', marginLeft:"15px" }}>
+          <a href="/pets" style={{ textDecoration: 'none', color: 'black', marginLeft:"15px" }}>
             <img src={rabitImage} alt="rabits" />
             <p style={{ marginLeft: '40px' }}><b>Rabits</b></p>
           </a>
-          <a href="/doghome" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/pets" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Dog} alt="rabits"/>
             <p style={{ marginLeft: '43px' }}><b>Dog</b></p>
           </a>
-          <a href="/cathome" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/pets" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Cat} alt="rabits"/>
             <p style={{ marginLeft: '45px' }}><b>Cat</b></p>
           </a>
-          <a href="/chickenhome" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/pets" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Poultry} alt="rabits" />
             <p style={{ marginLeft: '37px' }}><b>Poultry</b></p>
           </a>
-          <a href="/birdhome" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/pets" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Bird} alt="rabits" />
             <p style={{ marginLeft: '40px' }}><b>Birds</b></p>
           </a>
-          <a href="/horsehome" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/pets" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Horse} alt="rabits"/>
             <p style={{ marginLeft: '40px' }}><b>Horse</b></p>
           </a>
-          <a href="/goatsheapgoat" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/pets" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Sheep} alt="rabits"/>
             <p style={{ marginLeft: '10px' }}><b>Goats & Sheeps</b></p>
           </a>
-          <a href="/elephanthome" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/pets" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={Elephant} alt="rabits" />
             <p style={{ marginLeft: '30px' }}><b>Elephants</b></p>
           </a>
-          <a href="/cowhome" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/pets" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={cow} alt="rabits" />
             <p style={{ marginLeft: '47px' }}><b>Cow</b></p>
           </a>
-          <a href="/camelhome" style={{ textDecoration: 'none', color: 'black' }}>
+          <a href="/pets" style={{ textDecoration: 'none', color: 'black' }}>
             <img src={camel} alt="rabits" />
             <p style={{ marginLeft: '40px' }}><b>Camel</b></p>
           </a>
@@ -201,25 +201,25 @@ function Home() {
   <div className="card" style={{ margin: "0 10px", position: "relative" }}>
     <img src={Grooming} alt="Cat" style={{ maxWidth: "100%", height: "auto" }} />
     <div class='card-info'>
-      <b>Grooming</b>
+      <a href='/userprofilelogin' style={{textDecoration:"none", color:"black"}}><b>Grooming</b></a>
     </div>
   </div>
   <div className="card" style={{ margin: "0 10px", position: "relative" }}>
     <img src={healthcare} alt="Cat" style={{ maxWidth: "100%", height: "auto" }} />
     <div class='card-info'>
-      <b>Health Care</b>
+      <a href="/userprofilelogin" style={{textDecoration:"none" , color:"black"}}><b>Health Care</b></a>
     </div>
   </div>
   <div className="card" style={{ margin: "0 10px", position: "relative" }}>
     <img src={Breeding} alt="Cat" style={{ maxWidth: "100%", height: "auto" }} />
     <div class='card-info'>
-      <b>Breeding</b>
+    <a href="/userprofilelogin" style={{textDecoration:"none" , color:"black"}}><b>Breeding</b></a>
     </div>
   </div>
   <div className="card" style={{ margin: "0 10px", position: "relative" }}>
     <img src={feeding} alt="Cat" style={{ maxWidth: "100%", height: "250px" }} />
     <div class='card-info'>
-      <b>Feeding</b> 
+    <a href="/userprofilelogin" style={{textDecoration:"none" , color:"black"}}><b>Feeding</b></a>
     </div>
   </div>
 </div>
@@ -227,155 +227,172 @@ function Home() {
 
 {/* Add other sections similarly */}
 
-      <div>
-      <video 
-      src={dogwalking} 
-      style={{
-      height: "450px", 
-      width: "1200px", 
-      marginTop: "20px", 
-      marginLeft: "10px"
-      }}
-      autoPlay  
-      loop      
-      muted     
-      ></video>
-    </div>
+<div style={{ maxWidth: '100%', overflow: 'hidden' }}>
+  <video
+    src={dogwalking}
+    style={{
+      width: '100%',
+      height: 'auto',
+      marginTop: '20px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      display: 'block',
+    }}
+    autoPlay
+    loop
+    muted
+  ></video>
+</div>
 
-      <div class="offers-header" style={{marginTop:"30px"}}>
-        <hr class="line" style={{marginLeft:"100px", width:"200px"}}/>
-        <span> <h3>We offer</h3></span>
-        <hr class="line" style={{marginRight:"100px", width:"200px"}}/>
-      </div>
 
-      <div class='sellercard'>
-        <div class='card' style={{borderColor:"transparent"}}>
-        <a href='/userlogin'> <img src={DJ} alt="Cat" />
-          <div class='card-info'>
-          <b style={{textDecoration:"none", color:"black"}}>Jackets</b>
-        </div></a>
-      </div>
-      <div class='card' style={{borderColor:"transparent"}}>
-      <a href='/userlogin'><img src={DW} alt="Cat" />
-        <div class='card-info'>
-          <b style={{textDecoration:"none", color:"black"}}>Winter collection</b>
-        </div></a>
-      </div>
-      <div class='card' style={{borderColor:"transparent"}}>
-      <a href='/userlogin'> <img src={DB} alt="Cat" />
-          <div class='card-info'>
-            <b style={{textDecoration:"none", color:"black"}}>Beds and beadsheets</b>
-          </div></a>
-      </div>
-        <div class='card' style={{borderColor:"transparent"}}>
-        <a href='/userlogin'> <img src={RC} alt="Cat" />
-          <div class='card-info'>
-            <b style={{textDecoration:"none", color:"black"}}>Cloths</b>
-          </div></a>
-        </div>
-      </div>
+    <div class="offers-header" style={{ marginTop: "30px", textAlign: "center" }}>
+  <hr class="line" style={{ width: "200px" }} />
+  <h3>We offer</h3>
+  <hr class="line" style={{ width: "200px" }} />
+</div>
 
-      <div class="offers-header" >
-        <hr class="line" style={{marginLeft:"100px", width:"200px"}} />
-          <span> <h3>Our Top Products</h3></span>
-        <hr class="line" style={{marginRight:"100px", width:"200px"}}/>
+<div class='sellercard' style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+  <div class='card' style={{ borderColor: "transparent", width: "260px", margin: "10px" }}>
+    <a href='/userprofilelogin'> <img src={DJ} alt="Cat" style={{ width: "100%", height: "auto" }} />
+      <div class='card-info'>
+        <b style={{ textDecoration: "none", color: "black" }}>Jackets</b>
       </div>
+    </a>
+  </div>
+  <div class='card' style={{ borderColor: "transparent", width: "240px", margin: "10px" }}>
+    <a href='/userprofilelogin'><img src={DW} alt="Cat" style={{ width: "100%", height: "auto" }} />
+      <div class='card-info'>
+        <b style={{ textDecoration: "none", color: "black" }}>Winter collection</b>
+      </div>
+    </a>
+  </div>
+  <div class='card' style={{ borderColor: "transparent", width: "250px", margin: "10px" }}>
+    <a href='/userprofilelogin'> <img src={DB} alt="Cat" style={{ width: "100%", height: "auto" }} />
+      <div class='card-info'>
+        <b style={{ textDecoration: "none", color: "black" }}>Beds and bedsheets</b>
+      </div>
+    </a>
+  </div>
+  <div class='card' style={{ borderColor: "transparent", width: "250px", margin: "10px" }}>
+    <a href='/userprofilelogin'> <img src={RC} alt="Cat" style={{ width: "100%", height: "auto" }} />
+      <div class='card-info'>
+        <b style={{ textDecoration: "none", color: "black" }}>Cloths</b>
+      </div>
+    </a>
+  </div>
+</div>
 
-      <div class='sellercard'>
-        <div class='card' style={{borderRadius:"50%",borderColor:"transparent"}}>
-        <a href='/userlogin'><img src={kong} alt="kongo" style={{borderRadius:"50%"}}/>
-          <div class='card-info'>
-            <b style={{textDecoration:"none", color:"black"}}>Kong</b>
-          </div></a>
-        </div>
-        <div class='card' style={{borderRadius:"50%", borderColor:"transparent"}}>
-        <a href='/userlogin'><img src={birdtoys} alt="birdtoys" style={{borderRadius:"50%"}}/>
-          <div class='card-info'>
-          <b style={{textDecoration:"none", color:"black"}}>Bird Toys</b>
-          </div></a>
-        </div>
-        <div class='card' style={{borderRadius:"50%", borderColor:"transparent"}}>
-        <a href='/userlogin'><img src={bone} alt="bone" style={{borderRadius:"50%"}} />
-          <div class='card-info'>
-            <b style={{textDecoration:"none", color:"black"}}>Bone Toys</b>
-          </div></a>
-        </div>
-        <div class='card' style={{borderRadius:"50%", borderColor:"transparent"}}>
-        <a href='/userlogin'><img src={hamster} alt="hamster" style={{borderRadius:"50%"}}/>
-          <div class='card-info'>
-          <b style={{textDecoration:"none", color:"black"}}>Hamster</b> 
-          </div></a>
-        </div>
-      </div>
+<div class="offers-header" style={{ textAlign: "center", marginTop: "30px" }}>
+  <hr class="line" style={{ width: "200px" }} />
+  <h3>Our Top Products</h3>
+  <hr class="line" style={{ width: "200px" }} />
+</div>
 
-      <div class="offers-header" >
-        <hr class="line"  style={{marginLeft:"100px", width:"200px"}}/>
-        <span> <h3>Top Categories</h3></span>
-        <hr class="line" style={{marginRight:"100px", width:"200px"}}/>
+<div class='sellercard' style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
+  <div class='card' style={{ borderRadius: "50%", borderColor: "transparent", width: "250px", margin: "10px" }}>
+    <a href='/userprofilelogin'><img src={kong} alt="kongo" style={{ borderRadius: "50%", width: "100%", height: "auto" }} />
+      <div class='card-info'>
+        <b style={{ textDecoration: "none", color: "black" }}>Kong</b>
       </div>
+    </a>
+  </div>
+  <div class='card' style={{ borderRadius: "50%", borderColor: "transparent", width: "250px", margin: "10px" }}>
+    <a href='/userprofilelogin'><img src={birdtoys} alt="birdtoys" style={{ borderRadius: "50%", width: "100%", height: "auto" }} />
+      <div class='card-info'>
+        <b style={{ textDecoration: "none", color: "black" }}>Bird Toys</b>
+      </div>
+    </a>
+  </div>
+  <div class='card' style={{ borderRadius: "50%", borderColor: "transparent", width: "250px", margin: "10px" }}>
+    <a href='/userprofilelogin'><img src={bone} alt="bone" style={{ borderRadius: "50%", width: "100%", height: "auto" }} />
+      <div class='card-info'>
+        <b style={{ textDecoration: "none", color: "black" }}>Bone Toys</b>
+      </div>
+    </a>
+  </div>
+  <div class='card' style={{ borderRadius: "50%", borderColor: "transparent", width: "250px", margin: "10px" }}>
+    <a href='/userprofilelogin'><img src={hamster} alt="hamster" style={{ borderRadius: "50%", width: "100%", height: "auto" }} />
+      <div class='card-info'>
+        <b style={{ textDecoration: "none", color: "black" }}>Hamster</b>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<div class="offers-header" style={{ textAlign: "center" }}>
+  <hr class="line" style={{ width: "200px" }} />
+  <h3>Top Categories</h3>
+  <hr class="line" style={{ width: "200px" }} />
+</div>
     
     <div class="home__images1" style={{marginTop: "30px"}}>
-    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={CF} 
+    <a href='/userprofilelogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={CF} 
     style={{ transform: "rotate(10deg)", height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)" }}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b> DogFood</b></h3></a>
-    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={DF} 
+    <a href='/userprofilelogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={DF} 
     style={{transform: "rotate(10deg)", height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)"}}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b>Cat Food</b></h3></a>
-    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={CT} 
+    <a href='/userprofilelogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={CT} 
     style={{transform: "rotate(10deg)", height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)"}}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b>Cat Toys</b></h3></a>
-    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={PC} 
+    <a href='/userprofilelogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={PC} 
     style={{transform: "rotate(10deg)", height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)"}}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b>Cloths</b></h3></a>
-    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={rabitfood} 
+    <a href='/userprofilelogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={rabitfood} 
     style={{transform: "rotate(10deg)", height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)"}}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b>Rabit Food</b></h3></a>
-    <a href='/userlogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={horsefood} 
+    <a href='/userprofilelogin' style={{textDecoration:"none", color:"white", fontFamily:"sans-serif"}}><img src={horsefood} 
     style={{transform: "rotate(10deg)",height: "200px", width: "200px", marginTop: "20px", marginLeft: "60px", borderRadius: "25px 0 25px 0", boxShadow: "0px 20px 8px  rgba(0, 0, 0, 0.5)"}}/>
     <h3 style={{ textAlign:"center",marginTop:"20px"}}><b>Horse Food</b></h3></a>
     </div>
 
-    <div class="offers-header" >
-      <hr class="line" style={{marginLeft:"100px", width:"200px"}}/>
-      <span> <h3>Ask Our Consultants</h3></span>
-      <hr class="line" style={{width:"200px", marginRight:"100px"}}/>
-      </div>
-    <div class='experts-card'>
-        <div class='card' style={{width:"300px", height:"400px"}}>
-        <img src={doctor2} alt="Cat" 
-        style={{height:"160px",width:"160px", marginLeft:"70px", borderRadius:"50%"}} />
-        <div style={{backgroundColor:'rgb(23, 39, 122)'}}>
-        <h4 style={{textAlign:"center", color:"white"}}>Dr Harry Porter</h4>
-        <p style={{textAlign:"center", color:"white", height:"187px"}}>Dr Harry Porter, He has more than 20+ years of experiance as a veterinarian.
-          He has an excellent journety with PETEX. He has a great Skills in clinical procedures
-          and he is well experienced about all pet diseases. He love pets more that's the reason now he is here.........
-          <a href='#' style={{color:"white"}}>konw More</a> 
-        </p></div>
-      </div>
-      <div class='card' style={{width:"300px", height:"400px"}}>
-        <img src={doctor3} alt="Cat" 
-        style={{height:"160px",width:"160px", marginLeft:"70px", borderRadius:"50%"}}/>
-        <div style={{backgroundColor:'rgb(23, 39, 122)'}}>
-        <h4 style={{textAlign:"center", color:"white"}}>Stella ben</h4>
-        <p style={{textAlign:"center", color:"white", height:"187px"}}>Stella ben, she is the head of our horse training center.
-        She has experience of 15+ years in maintaing all pets trainings sections. Her dedication in taking care about pets
-        is more precious.......... <a href='#' style={{color:"white"}}>konw More</a>
-        </p>
-       </div>
-      </div>
-      <div class='card' style={{width:"300px", height:"400px"}}>
-        <img src={doctor4} alt="Cat"  
-        style={{height:"160px",width:"160px", marginLeft:"70px", borderRadius:"50%"}}/>
-         <div style={{backgroundColor:'rgb(23, 39, 122)'}}>
-        <h4 style={{textAlign:"center", color:"white"}}>Liana Maren</h4>
-        <p style={{textAlign:"center", color:"white", height:"187px"}}>Liana Maren, she is may be one of the best groomer
-        in the world . She has a great talent in grooming all types of pets. Her experience is more than 12+ years but
-        her work looks like more than 30+ years experts work..........
-        <a href='#' style={{color:"white"}}>konw More</a>
-        </p></div>
-      </div>
+    <div class="offers-header" style={{ textAlign: "center" }}>
+  <hr class="line" style={{ width: "200px" }} />
+  <h3>Ask Our Consultants</h3>
+  <hr class="line" style={{ width: "200px" }} />
+</div>
+
+<div class='experts-card' style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+  <div class='card' style={{ width: "320px", height: "400px", margin: "20px", borderRadius: "15px" }}>
+    <img src={doctor2} alt="Cat" style={{ height: "160px", width: "160px", margin: "20px auto", borderRadius: "50%" }} />
+    <div style={{ backgroundColor: 'rgb(23, 39, 122)', borderRadius: "0 0 15px 15px" }}>
+      <h4 style={{ textAlign: "center", color: "white" }}>Dr Harry Porter</h4>
+      <p style={{ textAlign: "center", color: "white", padding: "10px", height: "180px", overflow: "hidden" }}>
+        Dr Harry Porter, He has more than 20+ years of experience as a veterinarian.
+        He has an excellent journey with PETEX. He has great skills in clinical procedures
+        and he is well experienced in all pet diseases. He loves pets more, that's the reason he is here.
+        <a href='/userprofilelogin' style={{ color: "white" }}>Know More</a>
+      </p>
     </div>
-    <div>
+  </div>
+  <div class='card' style={{ width: "320px", height: "400px", margin: "20px", borderRadius: "15px" }}>
+    <img src={doctor3} alt="Cat" style={{ height: "160px", width: "160px", margin: "20px auto", borderRadius: "50%" }} />
+    <div style={{ backgroundColor: 'rgb(23, 39, 122)', borderRadius: "0 0 15px 15px" }}>
+      <h4 style={{ textAlign: "center", color: "white" }}>Stella ben</h4>
+      <p style={{ textAlign: "center", color: "white", padding: "10px", height: "180px", overflow: "hidden" }}>
+        Stella ben, she is the head of our horse training center.
+        She has experience of 15+ years in maintaining all pet training sections. Her dedication in taking care of pets
+        is more precious.
+        <a href='/userprofilelogin' style={{ color: "white" }}>Know More</a>
+      </p>
+    </div>
+  </div>
+  <div class='card' style={{ width: "320px", height: "400px", margin: "20px", borderRadius: "15px" }}>
+    <img src={doctor4} alt="Cat" style={{ height: "160px", width: "160px", margin: "20px auto", borderRadius: "50%" }} />
+    <div style={{ backgroundColor: 'rgb(23, 39, 122)', borderRadius: "0 0 15px 15px" }}>
+      <h4 style={{ textAlign: "center", color: "white" }}>Liana Maren</h4>
+      <p style={{ textAlign: "center", color: "white", padding: "10px", height: "180px", overflow: "hidden" }}>
+        Liana Maren, she is may be one of the best groomers in the world. She has a great talent in grooming all types of pets.
+        Her experience is more than 12+ years but her work looks like more than 30+ years experts work.
+        <a href='/userprofilelogin' style={{ color: "white" }}>Know More</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+    <div style={{marginTop:"3%"}}>
       <Footer/>
     </div>
     </body>

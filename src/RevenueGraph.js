@@ -1,47 +1,139 @@
-import React, { useEffect, useState } from "react";
-import { Typography } from "antd";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import moment from 'moment';
+import * as XLSX from 'xlsx';
+import { Line } from 'react-chartjs-2';
 
-function RevenueGraph() {
-  const [loading, setLoading] = useState(false);
-  const [revenueData, setRevenueData] = useState([]);
+const SellingReport = () => {
+  const [formData, setFormData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [selectedMonth, setSelectedMonth] = useState('');
+  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedDish, setSelectedDish] = useState('');
+  const [error, setError] = useState(null);
+
+  const [totalCost, setTotalCost] = useState(0);
+
+  // State for line chart data
+  const [chartData, setChartData] = useState({
+    labels: [],
+    datasets: [
+      {
+        label: 'Total Cost',
+        data: [],
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1,
+      },
+    ],
+  });
 
   useEffect(() => {
-    setLoading(true);
-
-    // Replace the URL with your actual API endpoint that fetches data from the SQL database
-    fetch("http://localhost:9011/petex/getAll")
-      .then((response) => response.json())
-      .then((data) => {
-        // Assuming data is an array of objects with properties customerId, price, quantity
-        const mappedData = data.map((item) => ({
-          customerId: item.customerId,
-          revenue: item.price * item.quantity,
-        }));
-
-        setRevenueData(mappedData);
-        setLoading(false);
+    axios.get('http://localhost:9011/petex/getAll')
+      .then(response => {
+        setFormData(response.data);
+        setFilteredData(response.data);
+        updateChartData(response.data);
       })
-      .catch((error) => {
-        console.error("Error fetching revenue data:", error);
-        setLoading(false);
+      .catch(error => {
+        setError(error.message);
+        console.error('Error fetching data:', error);
       });
   }, []);
 
-  return (
-    <div>
-      <Typography.Title level={4}>Revenue Graph</Typography.Title>
-      <ResponsiveContainer width="50%" height={200}>
-        <BarChart data={revenueData}>
-          <XAxis dataKey="customerId" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="revenue" fill="#88846" />
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
-  );
-}
+  const handleMonthChange = (event) => {
+    const selectedMonth = event.target.value;
+    setSelectedMonth(selectedMonth);
+    filterData(selectedMonth, selectedDate, selectedDish);
+  };
 
-export default RevenueGraph;
+  const handleDateChange = (event) => {
+    const selectedDate = event.target.value;
+    setSelectedDate(selectedDate);
+    filterData(selectedMonth, selectedDate, selectedDish);
+  };
+
+  const handleDishChange = (event) => {
+    const selectedDish = event.target.value;
+    setSelectedDish(selectedDish);
+    filterData(selectedMonth, selectedDate, selectedDish);
+  };
+
+  const filterData = (month, date, dish) => {
+    let filtered = formData;
+    if (month) {
+      filtered = filtered.filter(
+        (item) => moment(item.lastUpdate).format('MM') === month
+      );
+    }
+    if (date) {
+      filtered = filtered.filter(
+        (item) => moment(item.lastUpdate).format('YYYY-MM-DD') === date
+      );
+    }
+
+    if (dish) {
+      filtered = filtered.filter((item) =>
+        item.dishes.toLowerCase().includes(dish.toLowerCase())
+      );
+    }
+
+    setFilteredData(filtered);
+    updateChartData(filtered);
+  };
+
+  const updateChartData = (data) => {
+    const months = moment.months();
+    const dataValues = months.map(month => {
+      const totalForMonth = data
+        .filter(item => moment(item.lastUpdate).format('MMMM') === month)
+        .reduce((total, item) => total + item.total, 0);
+      return totalForMonth;
+    });
+
+    setChartData({
+      labels: months,
+      datasets: [
+        {
+          label: 'Total Cost',
+          data: dataValues,
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1,
+        },
+      ],
+    });
+
+    const sumOfCost = data.reduce((total, item) => total + item.total, 0);
+    setTotalCost(sumOfCost);
+  };
+
+  const exportToExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(filteredData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'SellingReports');
+    XLSX.writeFile(workbook, 'SellingReports.xlsx');
+  };
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  return (
+    <>
+      <div className="sellingreport-container">
+        <h1>Selling Report</h1>
+       
+        <table>
+          {/* Render filteredData in table */}
+        </table>
+        {/* Line Chart */}
+        <div style={{ marginTop: '40px',width: '500px', height: '500px'  }}>
+          <Line data={chartData}/>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default SellingReport;

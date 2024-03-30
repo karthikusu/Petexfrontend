@@ -1,163 +1,192 @@
-import React from "react";
-import Navpet from "./Navpet";
-import { useState } from "react";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './Reportlost.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
+const Report = () => {
+  const [reports, setReports] = useState([]);
+  const [error, setError] = useState('');
+  const [showForm, setShowForm] = useState(false); // State variable to control form visibility
 
-function Reportlost(){
-  const [selectedDuration, setSelectedDuration] = useState('');
-  const [formErrors, setFormErrors] = useState({});
-  const [selectedDate, setSelectedDate] = useState('');
-
-  const handleDurationChange = (event) => {
-    setSelectedDuration(event.target.value);
-    setFormErrors((prevErrors) => ({ ...prevErrors, duration: '' }));
-  };
-
-  const handleDateChange = (event) => {
-    setSelectedDate(event.target.value);
-    setFormErrors((prevErrors) => ({ ...prevErrors, date: '' }));
-  };
-
-  const validateForm = (selectedDuration, selectedDate) => {
-    const errors = {};
-
-    if (!selectedDuration) {
-      errors.duration = 'Please select a duration';
+  useEffect(() => {
+    // Fetch reports only when showForm is true
+    if (showForm) {
+      fetchReports();
     }
+  }, [showForm]); // Fetch reports whenever showForm changes
 
-    if (!selectedDate) {
-      errors.date = 'Please choose a date';
+  const fetchReports = async () => {
+    try {
+      const response = await axios.get('http://localhost:9028/petex/getAllReport');
+      setReports(response.data);
+    } catch (error) {
+      setError('Error fetching reports');
     }
-
-    return errors;
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-
-    const validationErrors = validateForm(selectedDuration, selectedDate);
-
-    if (Object.keys(validationErrors).length === 0) {
-      toast.success('Booking successful!', {
-        position: 'top-right',
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+  const generatePDF = async () => {
+    try {
+      const response = await axios.get('http://localhost:9028/petex/pdf', {
+        responseType: 'blob' // Specify responseType as 'blob' to handle binary data
       });
-    } else {
-      setFormErrors(validationErrors);
+
+      // Create a Blob object from the binary data
+      const blob = new Blob([response.data], { type: 'application/pdf' });
+
+      // Create a URL for the Blob object
+      const url = window.URL.createObjectURL(blob);
+
+      // Create a link element and trigger a click event to download the PDF
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'report.pdf';
+      document.body.appendChild(link);
+      link.click();
+
+      // Cleanup
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(link);
+    } catch (error) {
+      setError('Error generating PDF');
     }
   };
 
-    return(
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Implement your form submission logic here
+  };
+
+  const handleViewReports = () => {
+    setShowForm(true); // Show the form when "View Reports" button is clicked
+  };
+
+  return (
+    <div>
+      <h2>Reports</h2>
+      <button onClick={handleViewReports}>View Reports</button> {/* Trigger to fetch and display reports */}
+      {showForm && ( // Show the form only when showForm is true
         <>
-        <Navpet/>
-        <div>
-            <img src="https://images.pexels.com/photos/6643646/pexels-photo-6643646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" style={{ width : "100%", marginTop : "1%", borderRadius : "2rem"}} alt=".."/>
-        </div>
-        <div className="Readmore" style={{ marginTop : "5rem"}}>
-        <div class="service-item bg-light d-flex p-4" style={{ display : "flex"}}>
-                        <div>
-                            <h1 class="text-uppercase mb-3" style={{ marginLeft : "10%", fontSize : "4rem"}}>Report Lost</h1>
-                            <p style={{ width : "40%", marginLeft : "3%", textAlign : "center"}}>Recommendations differ on what diet is best for dogs. Some people argue dogs have thrived on leftovers and scraps from their human owners for thousands of years, and commercial dog foods (which have only been available for the past century) contain poor-quality meats, additives, and other ingredients dogs should not ingest, or that commercial dog food is not nutritionally sufficient for their dogs.  <br/>
-                            The practice of feeding raw diets has raised some concerns due to the risk of food borne illnesses, zoonosis and nutritional imbalances.</p>
-                            
-                        </div>
-                        <div>
-                            <img style={{ width : "250%",border : "1px solid", borderRadius : "5rem", height : '70vh', marginRight : "10%", marginLeft : "-170%"}} src="https://images.pexels.com/photos/1378849/pexels-photo-1378849.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="..."/>
-                        </div>
-                    </div>
-                    <br/>
-                    </div>
+          {reports.length === 0 && !error && <p>No reports found</p>}
+          {error && <p>{error}</p>}
+          {reports.length > 0 && (
+            <ul>
+             {reports.length > 0 && (
+  <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px' }}>
+    <thead>
+      <tr>
+        <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left', backgroundColor: '#f2f2f2', color: 'black' }}>User Name</th>
+        <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left', backgroundColor: '#f2f2f2', color: 'black' }}>User Email</th>
+        <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left', backgroundColor: '#f2f2f2', color: 'black' }}>Address</th>
+        <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left', backgroundColor: '#f2f2f2', color: 'black' }}>Mobile Number</th>
+        <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left', backgroundColor: '#f2f2f2', color: 'black' }}>Pet Name</th>
+        <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left', backgroundColor: '#f2f2f2', color: 'black' }}>Pet Type</th>
+        <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left', backgroundColor: '#f2f2f2', color: 'black' }}>Pet Breed</th>
+        <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left', backgroundColor: '#f2f2f2', color: 'black' }}>Pet Colour</th>
+        <th style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left', backgroundColor: '#f2f2f2', color: 'black' }}>Date of lost</th>
+      </tr>
+    </thead>
+    <tbody>
+      {reports.map(report => (
+        <tr key={report.petId}>
+          <td style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>{report.userName}</td>
+          <td style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>{report.userEmail}</td>
+          <td style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>{report.address}</td>
+          <td style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>{report.userMoblieNumber}</td>
+          <td style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>{report.petName}</td>
+          <td style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>{report.petType}</td>
+          <td style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>{report.petBreed}</td>
+          <td style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>{report.petColour}</td>
+          <td style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'left' }}>{report.dateOfLost}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)}
 
-                    <p style={{ marginLeft : "2%", marginRight : "5%"}}> <span style={{ marginLeft : "5%", fontSize : "2rem"}}>Our</span> pet care service provides various forms of care for pets, including feeding, exercise, grooming, and overall well-being. This type of service can be provided in the pet owner's home or at a facility, such as a pet hotel or boarding kennel. We also offer additional services such as training, transportation, and medical care. We are specialize in caring for a specific type of animal, such as cats or dogs, while others may be able to care for a variety of different types of pets. The level of our care and type of services offered will vary depending on the specific pet care service.
+            </ul>
+          )}
 
-This Pet care services can be a great option for busy pet owners who are unable to provide the necessary care for their pets due to work or other commitments. They can also be a helpful resource for pet owners who are traveling and need someone to look after their pets while they are away.
+          <button onClick={generatePDF}>Generate PDF</button>
 
-There is often ask some questions about the pet care 
-service and we always try to give all the answer of their questions. Before taking services it is important to know about the service process and its advantages or disadvantages. Here is some questions and answers we set as standard.</p>
-        <br/>
-        
-        <div style={{ display : "flex"}}>
-            <div>
-            <img src="https://images.pexels.com/photos/7699422/pexels-photo-7699422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-           style={{ marginLeft : "2%", width : "90%" , border : "1px solid", borderRadius : "5rem"}} alt=".."/>
-           </div>
-           <br/>
-           <div className="ott">
-           <form style={{ marginTop : "-15%"}}>
-  <div class="Repoet" >
-    <h2>Report Here</h2>
-    <label for="example Pet Id" class="form-label1">Pet Id :</label>
-    <input type="Pet Id" class="form-control" id="exampleInput Pet Id" aria-describedby="Pet Id"/>
-    
-  </div>
-  <div >
-    <label for="exampleInputnPet Type" class="form-labe2">Pet Type :</label>
-    <input type="Pet Type" class="form-control" id="exampleInputPetType"/>
-  </div>
-  <div >
-    <label for="exampleInputPet Name" class="form-labe3">Pet Breed</label>
-    <input type="Pet Name" class="form-control" id="exampleInputPet Name"/>
-  </div>
+          {/* <form onSubmit={handleSubmit} style={formStyle}>
+            <div style={formGroup}>
+              <label htmlFor="userName">User Name:</label>
+              <input type="text" id="userName" name="userName" style={inputStyle} />
+            </div>
 
-  <div></div>
-  
-  <div >
-    <label for="exampleInputPet Name" class="form-labe3">Pet Name :</label>
-    <input type="Pet Name" class="form-control" id="exampleInputPet Name"/>
-  </div>
+            <div style={formGroup}>
+              <label htmlFor="userEmail">User Email:</label>
+              <input type="email" id="userEmail" name="userEmail" style={inputStyle} />
+            </div>
 
-  <div>
-    <label for="exampleInputPassword1" class="form-labe5">Height :</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div>
-  <label for="Date" className="form">
-              Date :
-              </label>
-              <input
-                style={{ width: "53%", height: "5vh", fontSize: "1.5rem", marginLeft: "45%" }}
-                type="date"
-                id="datePicker"
-                onChange={handleDateChange}
-                min={new Date().toISOString().split("T")[0]}
-                value={selectedDate}
-                
-                />
-  </div>
-  <div >
-    <label for="exampleInputPassword1" class="form-labe10">Caretaker Name :</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div>
-    <label for="exampleInputPassword1" class="form-labe7">Mobile :</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div>
-    <label for="exampleInputPassword1" class="form-labe8">Email :</label>
-    <input type="password" class="form-control" id="exampleInputPassword1"/>
-  </div>
-  <div>
-    <label for="exampleInputPassword1" class="form-labe9">Address :</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" style={{height : "10vh"}}/>
-  </div>
-  <br/>
-  <button type="submit" class="btn btn-primary">Submit</button>
+            <div style={formGroup}>
+              <label htmlFor="address">Address:</label>
+              <input type="text" id="address" name="address" style={inputStyle} />
+            </div>
 
-</form>
-</div>
+            <div style={formGroup}>
+              <label htmlFor="userMobileNumber">Mobile Number:</label>
+              <input type="text" id="userMobileNumber" name="userMobileNumber" style={inputStyle} />
+            </div>
 
-           </div>
-        
+            <div style={formGroup}>
+              <label htmlFor="petName">Pet Name:</label>
+              <input type="text" id="petName" name="petName" style={inputStyle} />
+            </div>
+
+            <div style={formGroup}>
+              <label htmlFor="petType">Pet Type:</label>
+              <input type="text" id="petType" name="petType" style={inputStyle} />
+            </div>
+
+            <div style={formGroup}>
+              <label htmlFor="petBreed">Pet Breed:</label>
+              <input type="text" id="petBreed" name="petBreed" style={inputStyle} />
+            </div>
+
+            <div style={formGroup}>
+              <label htmlFor="petColour">Pet Colour:</label>
+              <input type="text" id="petColour" name="petColour" style={inputStyle} />
+            </div>
+
+            <div style={formGroup}>
+              <label htmlFor="dateOfLost">Date of Lost:</label>
+              <input type="date" id="dateOfLost" name="dateOfLost" style={inputStyle} />
+            </div>
+
+            <button type="submit" style={buttonStyle}>Submit Report</button>
+          </form> */}
+          <link to="/"></link>
         </>
-    )
-}
-export default Reportlost;
+      )}
+    </div>
+  );
+};
 
+const formStyle = {
+  backgroundColor: 'whitesmoke',
+  padding: '20px',
+  boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)',
+  borderRadius: '5px'
+};
+
+const formGroup = {
+  marginBottom: '15px'
+};
+
+const inputStyle = {
+  padding: '8px',
+  width: '100%',
+  boxSizing: 'border-box',
+  border: '1px solid #ccc',
+  borderRadius: '5px'
+};
+
+const buttonStyle = {
+  padding: '10px 20px',
+  backgroundColor: '#007bff',
+  color: 'white',
+  border: 'none',
+  borderRadius: '5px',
+  cursor: 'pointer'
+};
+
+export default Report;

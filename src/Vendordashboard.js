@@ -1,21 +1,23 @@
 import React from 'react';
 import './Admin.css';
+import Orders from './RecentOrders';
+import AllServices from './AllServices';
 
 const Vendordashboard = () => {
   return (
     <div>
       <section id="sidebar">
-        <a href="#" className="brand" style={{backgroundColor:"darkmagenta"}}>
-          <i className='bx bxs-smile' ></i>
-          <span className="text" style={{color:"white"}}>PETEX</span>
+        <a href="#" className="brand">
+          <h1 style={{color:"black"}}>PETEX</h1>
         </a>
         <ul className="side-menu top">
-          <li className="active">
+        {/* <li>
             <a href="#">
-              <i className='bx bxs-dashboard'></i>
-              <span className="text">Dashboard</span>
+              <i className='bx bxs-group'></i>
+              <span className="text">Profile</span>
             </a>
-          </li>
+          </li> */}
+          
           <li>
             <a href="#">
               <i className='bx bxs-shopping-bag-alt'></i>
@@ -23,27 +25,45 @@ const Vendordashboard = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/toysvendor">
               <i className='bx bxs-doughnut-chart'></i>
               <span className="text">Items</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/sellingreport">
               <i className='bx bxs-message-dots'></i>
               <span className="text">Selling Report</span>
             </a>
           </li>
-          <li>
-            <a href="#">
-              <i className='bx bxs-group'></i>
-              <span className="text">Services</span>
+          <li className="active">
+            <a href="/houseboarding">
+              <i className='bx bxs-dashboard'></i>
+              <span className="text">House Boarding</span>
+            </a>
+          </li>
+          <li className="active">
+            <a href="/BreedPage">
+              <i className='bx bxs-dashboard'></i>
+              <span className="text">Breeding</span>
+            </a>
+          </li>
+          <li className="active">
+            <a href="/grooming">
+              <i className='bx bxs-dashboard'></i>
+              <span className="text">Grooming</span>
+            </a>
+          </li>
+          <li className="active">
+            <a href="/training">
+              <i className='bx bxs-dashboard'></i>
+              <span className="text">Training</span>
             </a>
           </li>
           <li>
             <a href="/" className="logout">
               <i className='bx bxs-log-out-circle'></i>
-              <span className="text">Logout</span>
+              <span className="text"><button>Logout</button></span>
             </a>
           </li>
         </ul>
@@ -58,13 +78,8 @@ const Vendordashboard = () => {
         </nav> */}
 
         <main>
-          <div className="head-title">
-            <div className="left">
-              <h1> Vendor Dashboard</h1>
-            </div>
-          </div>
 
-          <ul className="box-info">
+          {/* <ul className="box-info">
             <li>
               <i className='bx bxs-calendar-check'  style={{marginRight:"10px"}}></i>
               <span className="text"  >
@@ -86,14 +101,16 @@ const Vendordashboard = () => {
                 <p>Total Sales</p>
               </span>
             </li>
-          </ul>
+          </ul> */}
 
           <div className="table-data">
             <div className="order">
-              <div className="head">
-                <a href=""><h3>Orders Received</h3></a>
+              <div className="head" style={{backgroundColor:"", width:"110%", marginLeft:""}}>
+              <h3>Vendor DashBoard</h3>
               </div>
-              <table>
+              {/* <Orders/> */}
+              <AllServices/>
+              {/* <table>
                 <thead>
                   <tr>
                     <th>Order id</th>
@@ -138,7 +155,7 @@ const Vendordashboard = () => {
                     <td><span className="status completed">Completed</span></td>
                   </tr>
                 </tbody>
-              </table>
+              </table> */}
             </div>
           </div>
         </main>

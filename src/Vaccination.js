@@ -12,7 +12,7 @@ const Vaccination = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:9011/petex/getAll');
+      const response = await fetch('http://localhost:9020/petex/getAll');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -27,7 +27,7 @@ const Vaccination = () => {
     const confirmDelete = window.confirm(`Are you sure you want to delete ${customerName}?`);
     if (confirmDelete) {
       try {
-        axios.delete(`http://localhost:9011/petex/delete/${customerId}`);
+        axios.delete(`http://localhost:9020/petex/delete/${customerId}`);
         fetchData();
       } catch (error) {
         console.error('Error in deleting:', error);

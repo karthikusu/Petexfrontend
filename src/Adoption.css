@@ -1,10 +1,8 @@
 .adoption-main{
-    
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     height: auto;
   }
-  
   .adoption-form {
       max-width: 550px;
       margin-top: 10px;
@@ -14,20 +12,15 @@
       background-color: transparent;
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-      
-      
     }
     .adoption-form {
       border: 1px solid #221717; 
-      box-sizing: border-box;
-      
+      box-sizing: border-box; 
     }
-    
     .form-heading {
       text-align: center;
       color: #333;
     }
-    
     .form-group {
       margin-bottom: 2px;
       margin-left: 10%;
@@ -37,7 +30,7 @@
     .form-label {
       display: block;
       margin-bottom: 8px;
-      color: white;
+      color: black;
     }
     
     .form-control {
@@ -64,6 +57,8 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      margin-left: 35%;
+      
     }
     
     .btn-primary:hover {

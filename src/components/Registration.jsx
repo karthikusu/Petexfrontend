@@ -222,7 +222,7 @@ function Registration() {
         });
         console.log('Registration successful:', response.data);
         window.alert('Registered successfully')
-        navigate("/userlogin"); // Redirect after successful registration
+        navigate("/userprofilelogin"); // Redirect after successful registration
       } catch (error) {
         console.error('Registration failed:', error);
         // Handle error, such as displaying an error message to the user
@@ -237,10 +237,10 @@ function Registration() {
           <h2>Registration</h2>
 
           {/* First row of input fields */}
-          <div style={{ display: 'flex', marginBottom: '10px' }}>
-            <div style={{ marginRight: '10px', flex: 1 }}>
-              <label htmlFor="disabledSelect" className="form-label" style={{marginTop:"-3%"}}>PetType :</label>
-              <select id="disabledSelect" className="form-select" name="petType" value={petType} onChange={handleChange} style={{ width: "330px", height: "35px", borderRadius: '4px', border: '1px solid #ccc' }}>
+          <div style={{ display: 'flex', marginBottom: '2px' }}>
+            <div style={{ marginRight: '10px', flex: 1  }}>
+              <label htmlFor="disabledSelect" className="form-label" style={{marginTop:"-2%",height:"32px"}}>PetType :</label>
+              <select id="disabledSelect" className="form-select" name="petType" value={petType} onChange={handleChange} style={{ width: "320px", height: "40px", borderRadius: '4px', border: '1px solid #ccc' }}>
                 <option value="">Select</option>
                 <option value="Dogs">Dogs</option>
                 <option value="Horses">Horses</option>
@@ -254,8 +254,8 @@ function Registration() {
               </select>
               {errors.petType && <span style={{ color: 'red' }}>{errors.petType}</span>}
             </div>
-            <div style={{ flex: 1, marginLeft: "7%" }}>
-              <label>Pet Name:</label>
+            <div style={{ flex: 1, marginLeft: "2%" }}>
+              <label style={{marginTop:"-3%",height:"22px"}}>Pet Name:</label>
               <input
                 type="text"
                 placeholder='Enter pet name'
@@ -282,7 +282,7 @@ function Registration() {
               />
               {errors.breed && <span style={{ color: 'red' }}>{errors.breed}</span>}
             </div>
-            <div style={{ flex: 1, marginLeft: "10%" }}>
+            <div style={{ flex: 1, marginLeft: "4%" }}>
               <label>Species:</label>
               <input
                 type="text"
@@ -310,9 +310,9 @@ function Registration() {
               />
               {errors.age && <span style={{ color: 'red' }}>{errors.age}</span>}
             </div>
-            <div style={{ flex: 1, marginLeft: "10%" }}>
+            <div style={{ flex: 1, marginLeft: "4%" }}>
               <label>Gender:</label>
-              <select name="gender" value={gender} onChange={handleChange} style={{ width: '105%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}>
+              <select name="gender" value={gender} onChange={handleChange} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}>
                 <option value="">Select</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -325,14 +325,14 @@ function Registration() {
           <div style={{ display: 'flex', marginBottom: '10px' }}>
             <div style={{ marginRight: '10px', flex: 1 }}>
               <label>Vaccinated:</label>
-              <select name="vaccinated" value={vaccinated} onChange={handleChange} style={{ width: '105%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}>
+              <select name="vaccinated" value={vaccinated} onChange={handleChange} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}>
                 <option value="">Select</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
               {errors.vaccinated && <span style={{ color: 'red' }}>{errors.vaccinated}</span>}
             </div>
-            <div style={{ flex: 1, marginLeft: "10%" }}>
+            <div style={{ flex: 1, marginLeft: "4%" }}>
               <label>Weight:</label>
               <input
                 type="number"
@@ -360,7 +360,7 @@ function Registration() {
               />
               {errors.color && <span style={{ color: 'red' }}>{errors.color}</span>}
             </div>
-            <div style={{ flex: 1, marginLeft: "10%" }}>
+            <div style={{ flex: 1, marginLeft: "4%" }}>
               <label>Height:</label>
               <input
                 type="text"
@@ -388,7 +388,7 @@ function Registration() {
               />
               {errors.disease && <span style={{ color: 'red' }}>{errors.disease}</span>}
             </div>
-            <div style={{ flex: 1, marginLeft: "10%" }}>
+            <div style={{ flex: 1, marginLeft: "4%" }}>
               <label>Full Name:</label>
               <input
                 type="text"
@@ -416,7 +416,7 @@ function Registration() {
               />
               {errors.phno && <span style={{ color: 'red' }}>{errors.phno}</span>}
             </div>
-            <div style={{ flex: 1, marginLeft: "10%" }}>
+            <div style={{ flex: 1, marginLeft: "4%" }}>
               <label>Alternative Number:</label>
               <input
                 type="text"
@@ -444,7 +444,7 @@ function Registration() {
               />
               {errors.email && <span style={{ color: 'red' }}>{errors.email}</span>}
             </div>
-            <div style={{ flex: 1, marginLeft: "10%" }}>
+            <div style={{ flex: 1, marginLeft: "4%" }}>
               <label>Password:</label>
               <input
                 type="password"
@@ -472,7 +472,7 @@ function Registration() {
               />
               {errors.confirmPwd && <span style={{ color: 'red' }}>{errors.confirmPwd}</span>}
             </div>
-            <div style={{ flex: 1, marginLeft: "10%" }}>
+            <div style={{ flex: 1, marginLeft: "4%" }}>
               <label>City:</label>
               <input
                 type="text"

@@ -1,4 +1,4 @@
-import { Space, Table, Typography, Button, Popconfirm } from "antd";
+import { Space, Table, Typography, Button, Popconfirm, Modal } from "antd";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
@@ -6,6 +6,8 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } fro
 function Orders() {
   const [loading, setLoading] = useState(false);
   const [dataSource, setDataSource] = useState([]);
+  const [selectedOrder, setSelectedOrder] = useState(null); // To store the selected order
+  const [viewModalVisible, setViewModalVisible] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -38,6 +40,11 @@ function Orders() {
     }
   };
 
+  const handleView = (record) => {
+    setSelectedOrder(record); // Set the selected order
+    setViewModalVisible(true); // Show the view modal
+  };
+
   const columns = [
     {
       title: "customerId",
@@ -64,14 +71,17 @@ function Orders() {
       title: "Action",
       dataIndex: "action",
       render: (_, record) => (
-        <Popconfirm
-          title="Are you sure to delete this record?"
-          onConfirm={() => handleDelete(record.customerId)}
-          okText="Yes"
-          cancelText="No"
-        >
-          <Button type="danger">Delete</Button>
-        </Popconfirm>
+        <>
+          <Button type="primary" onClick={() => handleView(record)}>View</Button>
+          <Popconfirm
+            title="Are you sure to delete this record?"
+            onConfirm={() => handleDelete(record.customerId)}
+            okText="Yes"
+            cancelText="No"
+          >
+            <Button type="danger">Delete</Button>
+          </Popconfirm>
+        </>
       ),
     },
   ];
@@ -82,6 +92,7 @@ function Orders() {
   }));
 
   return (
+    <>
     <Space size={20} direction="vertical">
       <Typography.Title level={4}>Orders</Typography.Title>
       <Table
@@ -92,6 +103,22 @@ function Orders() {
           pageSize: 2,
         }}
       />
+      <Modal
+        title="Order Details"
+        visible={viewModalVisible}
+        onCancel={() => setViewModalVisible(false)}
+        footer={null}
+      >
+        {selectedOrder && (
+          <div>
+            <p>Customer ID: {selectedOrder.customerId}</p>
+            <p>Product: {selectedOrder.product}</p>
+            <p>Price: ${selectedOrder.price}</p>
+            <p>Quantity: {selectedOrder.quantity}</p>
+            <p>Total: ${selectedOrder.total}</p>
+          </div>
+        )}
+      </Modal>
       <Typography.Title level={4}>Revenue Graph</Typography.Title>
       <ResponsiveContainer width="50%" height={200}>
         <BarChart data={revenueData}>
@@ -103,6 +130,7 @@ function Orders() {
         </BarChart>
       </ResponsiveContainer>
     </Space>
+    </>
   );
 }
 

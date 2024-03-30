@@ -43,7 +43,7 @@ const ConfirmPassword = () => {
       // Check if the response indicates success
       if (response.status === 200) {
         // Redirect to login page or home page
-        navigate('/doctorlogin');
+        navigate('/doctorprofile');
       } else {
         setError('Error confirming password');
       }
@@ -58,33 +58,33 @@ const ConfirmPassword = () => {
      
       <form onSubmit={handleSubmit}
        style={{backgroundColor:"transparent", width:"350px", height:"350px", marginLeft:"20%",borderRadius:"8px", marginTop:"100px", boxShadow:"0 4px 8px rgba(0, 0, 0, 0.8)"}}>
-         <h2>Confirm Password</h2>
-        <p><label>Email:</label></p>
+         <h2 style={{marginLeft:"5%"}}>Confirm Password</h2>
+        <p style={{marginLeft:"5%", marginTop:"2%"}}><label>Email:</label></p>
         <p><input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          style={{width:"300px", height:"25px", borderColor:"transparent", borderRadius:"2px"}}
+          style={{width:"300px", height:"25px", borderColor:"transparent", borderRadius:"2px",marginLeft:"5%",marginTop:"2%"}}
         /></p>
-        <p>New Password:</p>
+        <p style={{marginLeft:"5%",marginTop:"2%"}}>New Password:</p>
         <p><input
           type="password"
           placeholder="New Password"
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
-          style={{width:"300px", height:"25px", borderColor:"transparent", borderRadius:"2px"}}
+          style={{width:"300px", height:"25px", borderColor:"transparent", borderRadius:"2px",marginLeft:"5%",marginTop:"2%"}}
         /></p>
-        <p>Confirm Password:</p>
+        <p style={{marginLeft:"5%",marginTop:"2%"}}>Confirm Password:</p>
         <p><input
           type="password"
           placeholder="Confirm Password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          style={{width:"300px", height:"25px", borderColor:"transparent", borderRadius:"2px"}}
+          style={{width:"300px", height:"25px", borderColor:"transparent", borderRadius:"2px",marginLeft:"5%",marginTop:"2%"}}
         /></p>
         <button type="submit"
-        style={{backgroundColor:"red", borderColor:"transparent", borderRadius:"6px", height:"25px"}}>Confirm Password</button>
+        style={{backgroundColor:"red", borderColor:"transparent", borderRadius:"6px", height:"35px", marginLeft:"5%",marginTop:"5%"}}>Confirm Password</button>
         {error && <div style={{color:"red", marginTop:"10px"}}>{error}</div>}
       </form>
       </div>

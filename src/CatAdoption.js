@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navpet from "./Navpet";
 import { useNavigate } from "react-router-dom";
 import "./Adoption.css";
 import cat from './catBG.jpg';
@@ -91,7 +90,7 @@ function CamelAdoption() {
       setShowPopup(true);
       setTimeout(() => {
         setShowPopup(false);
-        navigate("/userhome");
+        navigate("/Payment");
       }, 2000);
     } catch (error) {
       setFormData((prevData) => ({
@@ -103,7 +102,6 @@ function CamelAdoption() {
 
   return (
     <>
-      <Navpet />
       <div className="adoption-main" style={{backgroundImage:`url(${cat})`}}>
         <br />
         <form className="adoption-form" style={{ marginLeft: "30%" }} onSubmit={handleSubmit}>

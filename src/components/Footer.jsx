@@ -21,11 +21,11 @@ const Footer = () => {
 
   return (
     <div className="footer">
-      <div className="footer-container">
+      <div className="footer-container" style={{marginLeft:"10%"}}>
         {/* Quick Links */}
         <div className="footer-column">
           <h3 style={{color:"white", marginTop: "20px"}}>LEARN MORE</h3>
-          <ul style={{marginLeft:"-30px"}}>
+          <ul >
             <li><a href="#" style={{textDecoration:"none", color:"white"}}>Contact Us</a></li>
             <li><a href="#" style={{textDecoration:"none", color:"white"}}>FAQs & Return policy</a></li>
             <li><a href="#" style={{textDecoration:"none", color:"white"}}>Promotion Cashback</a></li>
@@ -36,7 +36,7 @@ const Footer = () => {
 
         <div className="footer-column">
           <h3 style={{color:"white", marginTop: "20px"}}>EXPLORE</h3>
-          <ul style={{marginLeft:"-30px"}}>
+          <ul >
           <li><a href="#" style={{textDecoration:"none", color:"white"}}>About Us</a></li>
           <li><a href="#" style={{textDecoration:"none", color:"white"}}>Experience Center</a></li>
           <li><a href="#" style={{textDecoration:"none", color:"white"}}>Knowledge Center</a></li>
@@ -46,7 +46,7 @@ const Footer = () => {
 
         <div className="footer-column">
           <h3 style={{color:"white", marginTop: "20px"}}>SERVICES</h3>
-          <ul style={{marginLeft:"-30px"}}>
+          <ul >
             <li><a href="#" style={{textDecoration:"none", color:"white"}}>Pet Grooming</a></li>
             <li><a href="#" style={{textDecoration:"none", color:"white"}}>Vet Consultation</a></li>
             <li><a href="#" style={{textDecoration:"none", color:"white"}}>Training</a></li>
@@ -61,12 +61,12 @@ const Footer = () => {
         SUBSCRIBE TO GET UPDATES
       </h6>
       <input
-        type='text'
-        placeholder='Enter your email'
-        style={{ height: '30px', width: '250px', marginLeft: '-500px', marginTop: '10px' }}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+  type="text"
+  placeholder="Enter your email"
+  style={{ height: '30px', width: '80%', maxWidth: '250px', marginLeft: '-500px', marginTop: '10px' }}
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+/>
       <button
         type='submit'
         style={{ backgroundColor: 'red', borderRadius: '5px', marginLeft: '10px', borderColor: 'transparent' }}

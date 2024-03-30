@@ -21,7 +21,7 @@ function Products() {
     formData.append('price', price);
     formData.append('image', image);
     try {
-      const response = await axios.post('http://localhost:9013/petex/saveproduct', formData);
+      const response = await axios.post('http://localhost:9015/petex/saveproduct', formData);
       console.log('Product details added successfully: ', response.data);
       // Reset form fields
       setProductName('');
@@ -49,7 +49,7 @@ function Products() {
         <input type="text" placeholder="Product Name" value={productName} onChange={(e) => setProductName(e.target.value)} />
         <textarea placeholder="Information" value={information} onChange={(e) => setInformation(e.target.value)} />
         <input type="number" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
-        <input type="file" accept="image/*" onChange={handleImageChange} />
+        <input type="file" value={image} onChange={(e) => setImage(e.target.value)} />
         <button type="submit">Submit</button>
       </form>
     </div>

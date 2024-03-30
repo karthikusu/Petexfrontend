@@ -14,20 +14,21 @@ function NavigationBar() {
 
   // Define your 'items' array here
   const items = [
-    { name: 'Cat', url: '/cathome' },
-    { name: 'Dog', url: '/doghome' },
-    { name: 'Rabit', url: '/rabithome' },
-    { name: 'Goat', url: '/goatsheaphome' },
-    { name: 'Sheap', url: '/goatsheaphome' },
-    { name: 'Poultry', url: '/chickenhome' },
-    { name: 'Elephant', url: '/elephanthome' },
-    { name: 'Birds', url: '/birdhome' },
-    { name: 'Toys', url: '/userlogin' },
-    { name: 'Food', url: '/userlogin' },
-    { name: 'Cloths', url: '/userlogin' },
-    { name: 'Grooming', url: '/userlogin' },
-    { name: 'Health & Care', url: '/userlogin' },
-    { name: 'Vet care', url: '/userlogin' },
+    { name: 'Cat', url: '/pets' },
+    { name: 'Dog', url: '/pets' },
+    { name: 'Rabit', url: '/pets' },
+    { name: 'Goat', url: '/pets' },
+    { name: 'Sheap', url: '/pets' },
+    { name: 'Poultry', url: '/pets' },
+    { name: 'Elephant', url: '/pets' },
+    { name: 'Birds', url: '/pets' },
+    { name: 'Toys', url: '/pets' },
+    { name: 'Food', url: '/pets' },
+    { name: 'Cloths', url: '/pets' },
+    { name: 'Grooming', url: '/pets' },
+    { name: 'Health & Care', url: '/userprofilelogin' },
+    { name: 'Vet care', url: '/userprofilelogin' },
+    {name: 'User', url: '/userprofilelogin'},
     // Add more items as needed
   ];
 
@@ -41,13 +42,13 @@ function NavigationBar() {
         window.location.href = '/doctorlogin';
         break;
       case 'Vendor':
-        window.location.href = '/vendorlogin';
+        window.location.href = '/vendorprofilelogin';
         break;
       case 'Admin':
         window.location.href = '/adminlogin';
         break;
       case 'User':
-        window.location.href = '/userlogin';
+        window.location.href = '/userprofilelogin';
         break;
       default:
         break;
@@ -74,22 +75,28 @@ function NavigationBar() {
     <nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: "rgb(31, 26, 58)", height:"80px"
     }}>
       <div className="container">
-        <Link className="navbar-brand" to="/" style={{marginLeft:"-20px"}}>
+        <Link className="navbar-brand" to="/" style={{marginLeft:"0px"}}>
           <img src={Petcare} alt="Petcare Logo" style={{ height: "50px", width: "50px", borderRadius: "50%" }} />
         </Link>
         
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/" style={{marginLeft:"30px"}}>
+              <Link className="nav-link" to="/" style={{marginLeft:"50px"}}>
                 <img src={homegif} alt="Home" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
                 <b style={{color:"white", marginLeft:"10px"}}>Home</b>
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/products" style={{marginLeft:"30px"}}>
+            {/* <li className="nav-item">
+              <Link className="nav-link" to="/signupoptions" style={{marginLeft:"40px"}}>
                 <img src={profile} alt="Profile" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
-                <b style={{color:"white", marginLeft:"10px"}}>Profile</b>
+                <b style={{color:"white", marginLeft:"10px"}}>SignUp</b>
+              </Link>
+            </li> */}
+               <li className="nav-item">
+              <Link className="nav-link" to="/contactus" style={{marginLeft:"50px"}}>
+                <img src={cart} alt="Cart" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
+                <b style={{color:"white", marginLeft:"10px"}}>Contact</b>
               </Link>
             </li>
 
@@ -100,7 +107,7 @@ function NavigationBar() {
             placeholder="Search for products, brands and more"
             value={searchTerm}
             onChange={handleSearch}
-            style={{ width: "300px" }}
+            style={{ width: "300px", marginLeft:"40px" }}
           />
         </form>
         {searchTerm && (
@@ -119,27 +126,23 @@ function NavigationBar() {
           </ul>
         )}
 
+         
             <li className="nav-item">
-              <Link className="nav-link" to="/contactus" style={{marginLeft:"30px"}}>
-                <img src={cart} alt="Cart" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
-                <b style={{color:"white", marginLeft:"10px"}}>Contact</b>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/aboutus" style={{marginLeft:"30px"}}>
+              <Link className="nav-link" to="/aboutus" style={{marginLeft:"60px"}}>
                 <img src={about} alt="About" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
                 <b style={{color:"white", marginLeft:"10px"}}>About</b>
               </Link>
             </li>
             
           </ul>
-          <div className="nav-item dropdown" style={{marginLeft:"30px"}}>
+          <div className="nav-item dropdown" style={{marginLeft:"60px"}}>
         <button
               className="btn btn-outline-success my-2 my-sm-0 dropdown-toggle"
               onClick={handleDropdownClick}
               style={{color:"white"}}
-          >
-          Login
+              
+          ><img src={profile} alt="Profile" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
+          <b>SignIn</b>
         </button>
         {showDropdown && (
         <div className="dropdown-menu show" aria-labelledby="dropdownMenuButton">

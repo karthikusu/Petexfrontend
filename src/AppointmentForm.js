@@ -87,9 +87,9 @@ const AppointmentForm = () => {
 
     return (
         <div>
-            <div className="container mt-5" style={{ marginLeft: "600px" }}>
+            <div  style={{ marginLeft: "0px" , backgroundColor:"whitesmoke", width:"100%", height:"100vh"}}>
                 <div className="row">
-                    <div className="col-md-6 offset-md-3 border p-4 shadow bg-light">
+                    <div className="col-md-6 offset-md-3 border p-4 shadow bg-light" style={{marginTop:"2%"}}>
                         <div className="col-12">
                             <h3 className="fw-normal text-secondary fs-4 text-uppercase mb-4">Appointment form</h3>
                         </div>

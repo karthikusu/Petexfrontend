@@ -1,0 +1,86 @@
+
+.time-slots {
+    
+    overflow-x: auto; 
+    padding-bottom: 10px; 
+    
+  }
+  
+  .time-slot {
+    flex: 0 0 auto; 
+    
+    margin-right: 10px;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 30%;
+
+  }
+  
+  .time-slot:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .time-slot.unavailable {
+    background-color: #eb1d2e; 
+    color: #721c24;  
+    cursor: not-allowed;
+  }
+  
+  .time-slot.selected {
+    background-color: #007bff; 
+    color: #fff; 
+  }
+  
+.form-group {
+    margin-bottom: 20px;
+  }
+  
+ 
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+ 
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input[type="text"]:focus,
+  .form-group input[type="email"]:focus,
+  .form-group input[type="tel"]:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #007bff; 
+  }
+  
+
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3; 
+  }
+  
+  

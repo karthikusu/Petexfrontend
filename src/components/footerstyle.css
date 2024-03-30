@@ -1,21 +1,83 @@
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 200px;
-    margin-top: 20px;
-    
-  }
-  
-  .footer-column {
-    flex: 1;
-  }
+.footer {
+  background-color: rgb(31, 26, 58);
+  padding: 20px;
+  color: white;
+}
 
-  .footer{
-    background-color: rgb(31, 26, 58);
-    height: 350px;
-  }
-  .footer-bottom{
-    margin-left: 10px;
-  }
-  /* Add more styling as needed */
-  
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h3 {
+  margin-top: 20px;
+}
+
+.footer-column ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.footer-column ul li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.subscribe-connect {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.subscribe {
+  width: 50%;
+}
+
+.subscribe h6 {
+  margin-top: 10px;
+}
+
+.subscribe input {
+  height: 30px;
+  width: calc(100% - 70px);
+  margin-right: 10px;
+}
+
+.subscribe button {
+  height: 35px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.connect {
+  width: 50%;
+}
+
+.connect h3 {
+  margin-top: 10px;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icons a {
+  margin-right: 10px;
+}
+
+.social-icons img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.connect p {
+  margin-top: 10px;
+}

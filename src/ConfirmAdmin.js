@@ -7,17 +7,17 @@ import BG2 from './vetdoctorbg.jpg';
 const ConfirmAdmin = () => {
   const [email, setEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  // const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Validate if passwords match
-    if (newPassword !== confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
+    // if (newPassword !== confirmPassword) {
+    //   setError('Passwords do not match');
+    //   return;
+    // }
     try {
       // Validate if email is provided
       if (!email.trim()) {
@@ -29,7 +29,7 @@ const ConfirmAdmin = () => {
       const formData = {
         email: email,
         pwd: newPassword, // Assuming the backend expects the password field to be named 'pwd'
-        confirmPwd: confirmPassword // Assuming the backend expects the confirm password field to be named 'confirmPwd'
+        // confirmPwd: confirmPassword // Assuming the backend expects the confirm password field to be named 'confirmPwd'
       };
       const response = await axios.post(
         'http://localhost:9003/petex/confirmpwd',
@@ -74,16 +74,16 @@ const ConfirmAdmin = () => {
           onChange={(e) => setNewPassword(e.target.value)}
           style={{width:"300px", height:"25px", borderColor:"transparent", borderRadius:"2px"}}
         /></p>
-        <p>Confirm Password:</p>
+        {/* <p>Confirm Password:</p>
         <p><input
           type="password"
           placeholder="Confirm Password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           style={{width:"300px", height:"25px", borderColor:"transparent", borderRadius:"2px"}}
-        /></p>
+        /></p> */}
         <button type="submit"
-        style={{backgroundColor:"red", borderColor:"transparent", borderRadius:"6px", height:"25px"}}>Confirm Password</button>
+        style={{backgroundColor:"red", borderColor:"transparent", borderRadius:"6px", height:"35px"}}>Confirm Password</button>
         {error && <div style={{color:"red", marginTop:"10px"}}>{error}</div>}
       </form>
       </div>

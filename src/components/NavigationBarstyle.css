@@ -7,3 +7,6 @@
       transform: scale(1.2);
     
     }
+.navbar navbar-expand-lg fixed-top{
+  background-color: rgb(31, 26, 58);
+}

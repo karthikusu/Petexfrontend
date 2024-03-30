@@ -1,53 +1,36 @@
-.navbar-container {
-  height: 100px;
-}
-
-.navbar-logo {
-  margin-left: 20px;
-  border-radius: 5px;
-}
-
-.navbar-date-time {
-  margin-left: 50px;
-  color: black;
-  padding-bottom: 10px;
-  padding-top: 25px;
-}
-
-.navbar-date-time span {
-  color: rgb(16, 16, 16);
-  background-color: #ff0000;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.nav-link {
-  color: black;
-  padding: 15px 15px;
-  margin: 10px 20px;
-  border-radius: 10px;
-  transition: background-color 0.5s, color 0.5s;
-}
-
-.nav-link:hover {
-  background-color: #007bff;
-  color: white;
-}
-
 .sidebar {
-  box-shadow: 10px 10px 10px black;
-  margin-top: 20px;
-  text-align: center;
-  height: 600px;
+  background-color: rgb(31, 26, 58); /* Background color */
+  /* Sidebar width */
+  padding: 10px;
+  margin-top: -10px;
+  height:500px;
+  width: 200px; 
 }
 
-#dashboard-iframe {
-  width: 100%;
-  height: 600px;
-  border: none;
+.sidebar h2 {
+  color: white /* Header font color */
 }
 
-.sidebar-sticky {
-  position: sticky;
-  top: 0;
+.sidebar ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
 }
+
+.sidebar ul li {
+  margin-bottom: 10px; 
+  margin-top: 30px;
+}
+
+.sidebar ul li a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Link font color */
+  
+}
+
+.sidebar ul li a:hover {
+  color: white; 
+  background-color: red;
+  border-radius: 4px;
+}
+
+

@@ -2,7 +2,9 @@
     
     background-size: cover;
     background-attachment: fixed;
-    height: 100vh;
+    background-position: absolute;
+    
+    height: 900px;
   }
   
   .formContainer2 {

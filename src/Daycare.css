@@ -1,0 +1,86 @@
+/* Daycare.css */
+.pet-header {
+    display: flex;
+    background-color: skyblue;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .pet-header img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 60%;
+  }
+  
+  .pet-header h1 {
+    font-weight: bold;
+    margin-left: 2%;
+    margin-top: 2%;
+  }
+  
+  .pet-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .why-choose-us {
+    background-color: whitesmoke;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .daycare-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .daycare-card {
+    width: 270px;
+    height: 515px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .daycare-card img {
+    width: 100%;
+    height: 280px;
+    background-color: bisque;
+    border-radius: 20px;
+  }
+  
+  .card-details {
+    padding: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checked {
+    color: orange;
+  }
+  
+  .styled-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
