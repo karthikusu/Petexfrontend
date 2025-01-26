@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import './Vendornavbar.css';
-import Training22 from './Training22';
+import Training22 from './VendorTrainingForm';
 import GroomingForm from './GroomingForm';
 import BreedPage from './BreedPage';
 import HouseBourdForm from './HouseBourdForm';
@@ -11,6 +11,8 @@ import HousingBourding from './HousingBourding';
 import Shows from './Shows';
 import PetTypesForm from './PetTypesForm';
 import VendorProfilePage from './VendorProfilePage';
+import VendorDaycareForm from './Vendordaycareform';
+import VendorServicesList from './VendorServicesList';
 
 const Vendornavbar = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -46,6 +48,10 @@ const Vendornavbar = () => {
         return <Grooming />;
       case 'Training':
         return <Training22 />;
+      case 'DayCare':
+        return <VendorDaycareForm />;
+      case 'VendorServices':
+        return <VendorServicesList/>;
       default:
         return null;
     }
@@ -161,7 +167,7 @@ const Vendornavbar = () => {
         }
         
         .selected-option {
-          padding: 20px;
+          padding: 10px;
         }
         
        
@@ -172,9 +178,9 @@ const Vendornavbar = () => {
           }
         
           .sidebar {
-            width: 90%; /* Adjust sidebar width for smaller screens */
-            position: fixed; /* Keep sidebar fixed on smaller screens */
-            z-index: 1; /* Ensure sidebar stays on top */
+            width: 90%; 
+            position: fixed; 
+            z-index: 1; 
           }
         
           .content {
@@ -188,12 +194,14 @@ const Vendornavbar = () => {
   <div className="iconic">
     <a href="#" onClick={() => handleOptionClick('VendorProfile')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-user"></i> Profile</a>
     <a href="#" onClick={() => handleOptionClick('Vendor Items')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-cube"></i> Items</a>
-    <a href="#" onClick={() => handleOptionClick('Pet Types')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-paw"></i> Pet Types</a>
+    <a href="#" onClick={() => handleOptionClick('Pet Types')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-paw"></i> Pet Adoptions</a>
     <a href="#" onClick={() => handleOptionClick('SellingReport')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-chart-bar"></i> Selling Report</a>
-    <a href="#" onClick={() => handleOptionClick('Housing Boarding')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-home"></i> Housing Boarding</a>
-    <a href="#" onClick={() => handleOptionClick('Breeding')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-paw"></i> Breeding</a>
-    <a href="#" onClick={() => handleOptionClick('Grooming')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-cut"></i> Grooming</a>
-    <a href="#" onClick={() => handleOptionClick('Training')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-graduation-cap"></i> Training</a>
+    {/* <a href="#" onClick={() => handleOptionClick('Housing Boarding')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-home"></i> Housing Boarding</a> */}
+    {/* <a href="#" onClick={() => handleOptionClick('Breeding')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-paw"></i> Breeding</a> */}
+    {/* <a href="#" onClick={() => handleOptionClick('Grooming')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-cut"></i> Grooming</a> */}
+    {/* <a href="#" onClick={() => handleOptionClick('Training')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-graduation-cap"></i> Training</a> */}
+    <a href="#" onClick={() => handleOptionClick('DayCare')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-cut"></i>Services</a>
+    <a href="#" onClick={() => handleOptionClick('VendorServices')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-cut"></i>List Of Services</a>
     <a href='/' style={{textDecoration:"none", color:"white"}}><i className="fa fa-sign-out-alt"></i> Logout</a>
   </div>
 </div>
@@ -213,7 +221,7 @@ const Vendornavbar = () => {
         {(imageVisible && (selectedOption === null || selectedOption === 'img')) && (
         <div className="selected-option">
           <div>
-            <img src='https://wallpapers.com/images/high/1440p-disney-background-p2hc3ek94p3qzg6s.webp'style={{width:"100%"}}></img>
+            <img src='https://cdn.pixabay.com/photo/2015/06/02/12/59/book-794978_1280.jpg'style={{width:"100%"}}></img>
           </div>
         </div>
         )}

@@ -46,7 +46,7 @@ function PetTypes() {
     formData.append('file', productData.image);
 
     try {
-      const response = await axios.post('http://localhost:9015/addP', formData, {
+      const response = await axios.post('http://localhost:9015/addpet', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

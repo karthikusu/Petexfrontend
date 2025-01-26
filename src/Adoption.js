@@ -114,14 +114,18 @@
 
 
 import "./Adoption.css"; 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import Sidebar from "./Sidebar";
 import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify'; // Import toast
 
 function Adoption() {
+  const [ userDetails, setUserDetails] = useState({});
   const [formData, setFormData] = useState({
+    fullname: userDetails.fullname || '',
+    email: userDetails.email || '',
+    phno: userDetails.phno || '',
     petname: '',
     petBreed: '',
     emailaddress: '',
@@ -130,6 +134,15 @@ function Adoption() {
     city: ''
   });
 
+  
+
+  useEffect(() => {
+    // Fetch user details from localStorage
+    const userDetailsString = localStorage.getItem('userDetails');
+    if (userDetailsString) {
+      setUserDetails(JSON.parse(userDetailsString));
+    }
+  }, []);
   const [formErrors, setFormErrors] = useState({});
 
   const handleChange = (e) => {
@@ -144,6 +157,8 @@ function Adoption() {
       [name]: ''
     });
   };
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -206,11 +221,14 @@ function Adoption() {
   return (
     <>
     {/* <Sidebar/> */}
-    <div className="adoption-main" style={{marginTop: "1%",backgroundColor:"rgb(145, 154, 186)"}}>
-      <form className="adoption-form" style={{ marginLeft: "10%" }} onSubmit={handleSubmit}>
-        <h2 className="form-heading" style={{ color: "White" }}>Adopt Me</h2>
+    <div className="adoption-main" style={{marginTop: "0%",backgroundColor:"whitesmoke", position:"absolute", width:"84%", height:"auto"}}>
+      <form className="adoption-form" style={{ marginLeft: "10%" , width:"50%"}} onSubmit={handleSubmit}>
+        <h2 className="form-heading" style={{ color: "Black" }}>Adopt Me</h2>
         <div className="Adopt">
           <div className="form-group">
+          <input type="text" name="phno" value={formData.fullname} onChange={handleChange} placeholder="Name" style={{ display: 'block', width: '100%', marginBottom: '10px', padding: '8px', borderRadius: '4px', border: '1px solid #ccc', fontSize: '1rem' }} />
+        <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" style={{ display: 'block', width: '100%', marginBottom: '10px', padding: '8px', borderRadius: '4px', border: '1px solid #ccc', fontSize: '1rem' }} />
+        <input type="tel" name="phno" value={formData.phno} onChange={handleChange} placeholder="Mobile" style={{ display: 'block', width: '100%', marginBottom: '10px', padding: '8px', borderRadius: '4px', border: '1px solid #ccc', fontSize: '1rem' }} />
             <label htmlFor="petname" className="form-label">Pet Name:</label>
             <input type="text" className="form-control" id="petname" name="petname" value={formData.petname} onChange={handleChange} />
             {formErrors.petname && <span className="error" style={{ color : "red"}}>{formErrors.petname}</span>}

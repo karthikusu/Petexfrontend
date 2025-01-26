@@ -165,7 +165,7 @@ function BirdServices() {
                         <div className="card-body">
                             <h3 className="card-title">Funding</h3>
                             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <Link to="/funding"><a href="#" className="btn btn-primary1" style={{backgroundColor:"Red", color:"white"}}>Click Here</a></Link>
+                            <Link to="/requestfundingform"><a href="#" className="btn btn-primary1" style={{backgroundColor:"Red", color:"white"}}>Click Here</a></Link>
                         </div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@ function BirdServices() {
                         <div className="card-body">
                             <h3 className="card-title">Report Lost</h3>
                             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <Link to="/reportlostform"><a href="#" className="btn btn-primary1" style={{backgroundColor:"Red", color:"white"}}>Click Here</a></Link>
+                            <Link to="/lostpet"><a href="#" className="btn btn-primary1" style={{backgroundColor:"Red", color:"white"}}>Click Here</a></Link>
                         </div>
                     </div>
                 </div>
@@ -207,7 +207,7 @@ function BirdServices() {
 
                 <div className="card-container">
                     <div className="card">
-                        <img src="https://images.pexels.com/photos/19145872/pexels-photo-19145872/free-photo-of-dog-groomer-trimming-dogs-nails.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="..." style={{width:"100%", height:"auto"}}/>
+                        <img src="https://images.pexels.com/photos/19145872/pexels-photo-19145872/free-photo-of-dog-groomer-trimming-dogs-nails.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="..." style={{width:"100%", height:"200px"}}/>
                         <div className="card-body">
                             <h3 className="card-title">Purchase</h3>
                             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

@@ -41,11 +41,11 @@ function VendorLogin() {
           throw new Error('Failed to fetch user details');
         }
         
-        const userDetails = await userDetailsResponse.json();
-        localStorage.setItem('userDetails', JSON.stringify(userDetails));
+        const vendorDetails = await userDetailsResponse.json();
+        localStorage.setItem('vendorDetails', JSON.stringify(vendorDetails));
         
       
-        navigate('/vendordashboard', { state: { userDetails } }); 
+        navigate('/vendordashboard', { state: { vendorDetails } }); 
       } else {
         setError('Invalid email or password');
       }

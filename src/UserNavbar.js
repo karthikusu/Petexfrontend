@@ -27,36 +27,6 @@ const Vendornavbar = () => {
     setImageVisible(false);
   };
 
-  const renderSelectedOption = () => {
-    switch (selectedOption) {
-      case 'Profile':
-        return <UserProfilePage />;
-      case 'Homevisit':
-        return <HomeVisitForm />;
-      case 'Hospitalization':
-        return <HospitalizationForm />;
-      case 'UserItems':
-        return <UserItems />;
-      case 'UserPets':
-        return <UserPets />;
-      case 'Assistance':
-        return <Assistance />;
-      case 'Services':
-        return <Services />;
-      case 'Appointment':
-        return <DrAppointment />;
-      case 'Daycare':
-        return <Daycare />;
-      case 'Training':
-        return <Training />;
-      case 'History':
-        return <History />;
-      case 'VaccinationForm':
-        return <VaccinationForm />;
-      default:
-        return null;
-    }
-  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -71,6 +41,11 @@ const Vendornavbar = () => {
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
+  };
+
+  const [isLoggedIn, setIsLoggedIn] = useState(true); 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
   };
 
   return (
@@ -193,17 +168,18 @@ const Vendornavbar = () => {
 </style>
       
 <div className="sidebaruser" style={{ width: '193px' }}>
-  <div className="iconic">
-    <a href="#" onClick={() => handleOptionClick('Profile')} style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-user" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Profile</a>
-    <a href="#" onClick={() => handleOptionClick('UserItems')} style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-cube" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Items</a>
-    <a href="#" onClick={() => handleOptionClick('UserPets')} style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-paw" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Pet Types</a>
-    <a href="#" onClick={() => handleOptionClick('Assistance')} style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-hands-helping" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Assistance</a>
-    <a href="#" onClick={() => handleOptionClick('Services')} style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-handshake" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Services</a>
-    <a href="#" onClick={() => handleOptionClick('Appointment')} style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-calendar-plus" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Book Appointment</a>
-    <a href="#" onClick={() => handleOptionClick('VaccinationForm')} style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-syringe" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Vaccination</a>
-    <a href="#" onClick={() => handleOptionClick('Homevisit')} style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-home" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Home Visit</a>
-    <a href="#" onClick={() => handleOptionClick('Hospitalization')} style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-hospital" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Hospitalization</a>
-    <a href="#" onClick={() => handleOptionClick('History')} style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-history" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> History</a>
+<div className="iconic">
+    <a href="/userprofilepagenav" style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-user" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Profile</a>
+    <a href="/userpets"  style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-paw" style={{ fontSize: "20px", transition: "all 0.25s", }}></i>Adopt Pet</a>
+    <a href="/userassistancenav"  style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-hands-helping" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Assistance</a>
+    <a href="/userdoctordetailsbookingnav"  style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-calendar-plus" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Book Appointment</a>
+    <a href="/userhistorynav"  style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-history" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> History</a>
+    <a href="/userhomevisitformnav"  style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-home" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Home Visit</a>
+    <a href="/userhospitalizationformnav"  style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-hospital" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Hospitalization</a>
+    <a href="/useritemsnav"  style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-cube" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Items</a>
+    <a href="/userservicesnav"  style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-handshake" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Services</a>
+    {/* <a href="/usertrainingnavbar"  style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-fire" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Training</a> */}
+    <a href="/uservaccinationformnav"  style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-syringe" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Vaccination</a>
     <a href="/" style={{ textDecoration: "none", color: "#ebece2", display: "block", padding: "15px 20px", transition: "all 0.25s", }}><i className="fa fa-sign-out-alt" style={{ fontSize: "20px", transition: "all 0.25s", }}></i> Logout</a>
   </div>
 </div>
@@ -228,7 +204,7 @@ const Vendornavbar = () => {
           </div>
         </div>
         )}
-        {renderSelectedOption()}
+       
       </div>
     </div>
   );

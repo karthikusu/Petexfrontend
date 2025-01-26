@@ -3,29 +3,106 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import UserHomepage from './UserHomePage'; 
-import Register from './components/Registration';
 import Home from './components/Home'; 
+import ContactUs from './Contactus';
+import AboutUs from './Aboutus';
+
+//User Module
+import Register from './components/UserRegistration.jsx';
+import UserProfileLogin from './UserProfileLogin.js';
+import UserProfilePage from './UserProfilePage.js';
+import Login from './components/UserLogin.jsx';
 import UpdateUser from './components/UpdateUser2';
 import ForgetPassword from './components/UserForgetPassword.jsx';
 import ConfirmPassword from './components/UserConfirmPassword.jsx';
 import ValidateOTP from './components/UserValidateOTP.jsx';
+import UserNavbar from './UserNavbar.js';
+import ReportLostForm from './UserReportLostFormNavbar.js';
+import Lost from './UserReportLostNavbar.js';
+import Adoption from './UserAdoptionNavbar.js';
+import Payment from './UserPaymentNavbar.js';
+import Address from './UserAddressNavbar.js';
+import UserAssistance from './UserAssistance.js';
+import Sales from './UserSalesNavbar.js';
+import Purchase from './UserPurchaseNavbar.js';
+import Funding from './Funding.js';
+import Shows from './UserShowsNavbar.js';
+import Exibutor from './UserExibutorNavbar.js';
+import Exihibutionform from './UserExibitionFormNavbar.js';
+import History from './History.js';
+import UserCart from './UserCartNavbar.js';
+import UserPets from './UserPets.js';
+import Modal from './Model.js';
+import UserItems from './UserItems.js';
+import Daycare from "./UserDayCareNav.js";
+import UserBookforDaycareNavbar from "./UserBookforDaycareNavbar.js";
+import Parrot from './ParrotParrot.js';
+import Training22 from './UserTrainingNavbar.js';
+import Elephant2 from './UserElephantTrainingNavbar.js';
+import DogDog from './UserDogTrainingNavbar.js';
+import CatCat from './UserCatTrainingNavbar.js';
+import RabbitRabbit from './UserRabbitTrainingNavbar.js';
+import Monkey from './UserMonkeyTrainingNavbar.js';
+import BookNow from './BookNow.js';
+import Services from './UserServices.js';
+import UserBreeding from './UserBreeding.js';
+import UserBoarding from './UserBoardingPage.js';
+import UserGrooming from './UserGroomingPage.js';
+import VaccinationForm from './VaccinationForm.js';
+import Homevisitform from './HomeVisitForm.js';
+import Hospitalizationform from './HospitalizationForm.js';
+import SlotAppointmentTable from './SlotAppointmentTable.js';
+import DoctorDetailsBooking from './UserDoctorDetailsBooking.js';
+import DoctorSlotBooking from './DoctorSlotBooking.js';
+import Location from "./Location.js";
+import Location1 from "./Location1.js";
+import Location2 from "./Location2.js";
+import Location3 from "./Location3.js";
+import Location4 from "./Location4.js";
+import Location5 from "./Location5.js";
+import UserPetsNavbar from './UserPetsNavbar.js';
+import UserProfilePageNavbar from './UserProfilePageNavbar.js';
+import UserAssistanceNavbar from './UserAssistanceNavbar.js'
+import UserDoctorDetailsBookingNavbar from './UserDoctorDetailsBookingNavbar.js';
+import UserHistoryNavbar from './UserHistoryNavbar.js';
+import UserHomeVisitFormNavbar from './UserHomeVisitFormNavbar.js';
+import UserHospitalizationFormNavbar from './UserHospitalizationFormNavbar.js';
+import UserItemsNavbar from './UserItemsNavbar.js';
+import UserServicesNavbar from './UserServicesNavbar.js';
+import UserVaccinationFormNavbar from './UserVaccinationFormNavbar.js';
+import FundingDetailsPage from './FundingDetailsPage.jsx';
+import FundingDetails from './FundingDetails.jsx';
+import RequestFundingForm from './RequestFundingForm.jsx';
+import UserTrainingNavbar from './UserTrainingNavbar.js';
+import OrderPDFGen from './OrderPdfGenerator.js';
 
-import Adoption from './Adoption';
 import Accessories from './Accessories';
 // import Items from './Items';
 import Navbar from './Navbar';
 import Signout from './Signout';
-import Payment from './Payment';
-import Address from './Addrestable.js';
 
+//Vendor Module
 import VendorRegister from "./components/VendorRegistration";
+import VendorProfileLogin from './VendorProfileLogin';
+import VendorProfilePage from './VendorProfilePage.js';
 import VendorLogin from './components/VendorLogin';
 import ForgetVendor from './components/Foregetvendor';
 import ValidateVendor from './components/ValidateVendor';
 import ConfirmVendor from './components/ConfirmVendor'; 
+import Vendornavbar from './Vendornavbar.js';
 import VendorDashBoard from './Vendordashboard';
-import ContactUs from './Contactus';
-import AboutUs from './Aboutus';
+import ReportLost from './ReportLost.js';
+import VendorItemsForm from './VendorItemsForm.js';
+import PetTypesForm from './PetTypesForm.js';
+import Grooming from './Grooming.js';
+import GroomingForm from './GroomingForm.js';
+import HousingBourding from './HousingBourding.js';
+import HouseBourdForm from './HouseBourdForm.js';
+import VendorDaycareForm from './Vendordaycareform.js';
+import VendorTrainingForm from './VendorTrainingForm.js';
+import VendorServicesList from './VendorServicesList.js';
+
+
 import CA from './ChickenAdoption';
 import CatAdoption from './CatAdoption';
 import DogAdoption from './DogAdoption';
@@ -63,70 +140,44 @@ import { SignUpOptions } from './components/SignUpOptions';
 
 import UserDashBoard from './components/UserDashboard';
 import Items from './Items';
-import ItemsForm from './ItemsForm.js';
-import ToysForm from './ToysForm.js';
+
 import Toys from './Toys.js';
 import Clothing from './Clothing';
 import Clothingform from './ClothingForm';
 import BreedPage from './BreedPage.js';
 import AllServices from './AllServices.js';
-import ReportLost from './ReportLost.js';
-import ReportLostForm from './ReportLostForm.js';
+import ItemsForm from './ItemsForm.js';
+import ToysForm from './ToysForm.js';
+
 
 import ConfirmAdmin from './ConfirmAdmin';
 import Footer2 from './Footer';
 import AdminProfile from './AdminProfile.js';
 import AdminAdaption from './AdminAdaption.js';
 import AdminFunding from './AdminFunding.js';
+import AdminServices from './AdminServices.js';
+import AdminPetShow from './Adminpetshow.js';
 import Profile from './Profile';
 // import CartItems from './CartItems';
 
 // import PageContent from './PageContent';
 // import SideMenu from './SideMenu'
 // import AppRoutes from './AppRoutes';
-import UserAssistance from './UserAssistance.js';
-import Sales from './Sales.js';
-import Purchase from './Purchase.js';
-import Funding from './Funding.js';
-import Shows from './Shows.js';
-import History from './History.js';
-import UserCart from './UserCart.js';
-import UserPets from './UserPets.js';
-import UserItems from './UserItems.js';
+
 import Horseservices from './Horseservices.js';
 import Birdservices from './Birdservices.js';
 import CowServices from './Cowservices.js';
 import Sheepservices from './Sheepservices.js';
 import CatSerVices from './CatServices';
-import Services from './UserServices.js';
 import ElephantServices from './Elephantservices';
 import CamelServices from './Camelservices';
 import DrAppointment from './DrAppointment';
 import Doctorreport from './DoctorReport';
 
-import Daycare from "./Daycare";
-import Bookfordaycare from "./Bookfordaycare.js";
-import Location from "./Location.js";
-import Location1 from "./Location1.js";
-import Location2 from "./Location2.js";
-import Location3 from "./Location3.js";
-import Location4 from "./Location4.js";
-import Location5 from "./Location5.js";
+
 import SellingReport from './SellingReport.js';
 import AppointmentForm from './AppointmentForm.js';
-import Grooming from './Grooming.js';
-import GroomingForm from './GroomingForm.js';
-import HousingBourding from './HousingBourding.js';
-import HouseBourdForm from './HouseBourdForm.js';
 
-import Parrot from './ParrotParrot.js';
-import Training22 from './Training22';
-import Elephant2 from './Elephant2';
-import DogDog from './DogDog';
-import CatCat from './CatCat';
-import RabbitRabbit from './RabbitRabbit';
-import Monkey from './Monkey';
-import BookNow from './BookNow';
 
 import Pets from './components/PetItems.js';
 import DrList from './DrList.js';
@@ -139,32 +190,15 @@ import Drrohan from './DrRohan.js';
 import DrMahesh from './DrMahesh.js';
 import DrYogitha from './DrYogitha.js';
 
-import UserBreeding from './UserBreeding.js';
-import UserBoarding from './UserBoardingPage.js';
-import UserGrooming from './UserGroomingPage.js';
 
-import VaccinationForm from './VaccinationForm.js';
-import Homevisitform from './HomeVisitForm.js';
-import Hospitalizationform from './HospitalizationForm.js';
-import SlotAppointmentTable from './SlotAppointmentTable.js';
-
-import Vendornavbar from './Vendornavbar.js';
-import UserNavbar from './UserNavbar.js';
 import DoctorNavbar from './DoctorNavbar.js';
-import Login from './components/UserLogin.jsx';
 
-import VendorItemsForm from './VendorItemsForm.js';
-import PetTypesForm from './PetTypesForm.js';
 
-import DoctorDetailsBooking from './UserDoctorDetailsBooking.js';
-import DoctorSlotBooking from './DoctorSlotBooking.js';
-
-import UserProfileLogin from './UserProfileLogin.js';
-import UserProfilePage from './UserProfilePage.js';
-import VendorProfileLogin from './VendorProfileLogin';
-import VendorProfilePage from './VendorProfilePage.js';
 import Products from './ProductDetails.js';
-import Modal from './Model.js';
+import TermsAndConditions from './components/TermsAndConditions.js';
+import PrivacyPolicy from './components/PrivacyAndPolicy.js';
+import ExperienceCenter from './components/ExperienceCenter.js';
+import KnowledgeCenter from './components/KnowledgeCenter.js';
 
 function App() {
   return (
@@ -172,25 +206,62 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path='/terms' element={<TermsAndConditions/>}/>
+          <Route path='/privacyandpolicy' element={<PrivacyPolicy/>}/>
+          <Route path='/experiencecenter' element={<ExperienceCenter/>}/>
+          <Route path='/knowledgecenter' element={<KnowledgeCenter/>}/>
           {/* <Route path="/cart" element={<CartItems/>}/> */}
           {/* <Route path="/getproducts" element={<GetProducts/>}/> */}
 
+          <Route path="/userprofilelogin" element={<UserProfileLogin/>}/>
+          <Route path="/userprofilepage" element={<UserProfilePage/>}/>
+          <Route path="/userpets" element={<UserPetsNavbar/>}/>
+          <Route path='/userprofilepagenav' element={<UserProfilePageNavbar/>}/>
+          <Route path='/userassistancenav' element={<UserAssistanceNavbar/>}/>
+          <Route path="/usertrainingnavbar" element={<UserTrainingNavbar/>}/>
+          <Route path='/userdoctordetailsbookingnav' element={<UserDoctorDetailsBookingNavbar/>}/>
+          <Route path='/userhistorynav' element={<UserHistoryNavbar/>}/>
+          <Route path='/userhomevisitformnav' element={<UserHomeVisitFormNavbar/>}/>
+          <Route path='/userhospitalizationformnav' element={<UserHospitalizationFormNavbar/>}/>
+          <Route path="/useritemsnav" element={<UserItemsNavbar/>}/>
+          <Route path="/userservicesnav" element={<UserServicesNavbar/>}/>
+          <Route path="/uservaccinationformnav" element={<UserVaccinationFormNavbar/>}/>
+          <Route path="/usernavbar" element={<UserNavbar/>}/>
           <Route path="/pets" element={<Pets/>}/>
           <Route path="/reportlostform" element={<ReportLostForm/>}/>
+          <Route path="/lostpet" element={<Lost/>}/>
+          <Route path="/assistance" element={<UserAssistance/>}/>
+          <Route path="/sales" element={<Sales/>}/>
+          <Route path="/purchase" element={<Purchase/>}/>
+          <Route path="/funding" element={<Funding/>}/>
+          <Route path="/shows" element={<Shows/>}/>
+          <Route path="/exibutor" element={<Exibutor/>}/>
+          <Route path="/exibitionform" element={<Exihibutionform/>}/>
+          <Route path="/history" element={<History/>}/>
+          <Route path="/Cart" element={<UserCart/>}/>
+          <Route path="/userpets" element={<UserPets/>}/>
+          <Route path="/Modal" elementr={<Modal/>}/>
+          <Route path="/useritems" element={<UserItems/>}/>
+          <Route path="/vaccinationform" element={<VaccinationForm/>}/>
+          <Route path="/homevisitform" element={<Homevisitform/>}/>
+          <Route path="/hospitalizationform" element={<Hospitalizationform/>}/>
+          <Route path='/requestfundingform' element={<RequestFundingForm/>}/>
+          <Route path='/fundingdetails' element={<FundingDetails/>}/>
+          <Route path='/fundingdetailspage' element={<FundingDetailsPage/>}/>
+          <Route path='/paynow' element={<OrderPDFGen/>}/>
+
           <Route path="/signupoptions" element={<SignUpOptions/>}/>
           {/* <Route path="/products" element={<Product/>}/> */}
           <Route path="/NavigationBar" element={<NavigationBar />} />
           <Route path="/userlogin" element={<UserHomepage />} />
           <Route path="/loginuser" element={<Login/>}/>
-          <Route path="/usernavbar" element={<UserNavbar/>}/>
 
-          <Route path="/userprofilelogin" element={<UserProfileLogin/>}/>
-          <Route path="/userprofilepage" element={<UserProfilePage/>}/>
+
           <Route path="/vendorprofilelogin" element={<VendorProfileLogin/>}/>
           <Route path="/vendorprofilepage" element={<VendorProfilePage/>}/>
           <Route path="/doctornavbar" element={<DoctorNavbar/>}/>
 
-          <Route path="/vendorlogin" element={<VendorLogin/>}/>
+          {/* <Route path="/vendorlogin" element={<VendorLogin/>}/> */}
           <Route path="/userregister" element={<Register />} />
           <Route path="/vendorregister" element={<VendorRegister/>}/>
           <Route path="/update/:id" element={<UpdateUser />} />
@@ -205,6 +276,10 @@ function App() {
           <Route path="/vendordashboard" element={<Vendornavbar/>}/>
           <Route path="/vendoritemsform" element={<VendorItemsForm/>}/>
           <Route path="/pettypesform" element={<PetTypesForm/>}/>
+          <Route path="/vendordaycareform" element={<VendorDaycareForm/>}/>
+          <Route path="/vendortrainingform" element={<VendorTrainingForm/>}/>
+          <Route path="/vendorserviceslist" element={<VendorServicesList/>}/>
+
 
           <Route path="/aboutus" element={<AboutUs/>}/>
           <Route path="/contactus" element={<ContactUs/>}/>
@@ -215,6 +290,9 @@ function App() {
           <Route path="/admindashboard" element={<Admindashboard/>}/>
           <Route path="/adminadoption" element={<AdminAdaption/>}/>
           <Route path="/adminfunding" element={<AdminFunding/>}/>
+          <Route path="/adminservices" element={<AdminServices/>}/>
+          <Route path="/adminpetshow" element={<AdminPetShow/>}/>
+
           {/* <Route path="/Orders/Admindashboard" element={<Admindashboard/>}/> */}
           <Route path="/vendor" element={<Vendor/>}/>
           <Route path="/user" element={<User/>}/>
@@ -225,7 +303,7 @@ function App() {
           <Route path="/userdoctordetails" element={<DoctorDetailsBooking/>}/>
           {/* <Route path="/rabithome" element={<Homerabit/>}/>
           <Route path="/birdhome" element={<Birdhome/>}/> */}
-          <Route path="/userdashboard" element={<UserDashBoard/>}/>
+          {/* <Route path="/userdashboard" element={<UserDashBoard/>}/> */}
           <Route path="/items" element={<Items/>}/>
           <Route path="/vendoritemsform" element={<ItemsForm/>}/>
           <Route path="/toysvendor" element={<Toys/>}/>
@@ -242,22 +320,31 @@ function App() {
           <Route path="/userbreeding" element={<UserBreeding/>}/>
           <Route path="/userboarding" element={<UserBoarding/>}/>
           <Route path="/usergrooming" element={<UserGrooming/>}/>
+          <Route path="/Payment" element={<Payment/>} />
+          <Route path="/useraddress" element={<Address/>}/>
+          <Route path="/Adoption" element={<Adoption/>} />
+          <Route path="/doctorslotbooking" element={<DoctorSlotBooking/>}/>
+          <Route path="/training" element={<Training22/>} />
+          <Route path="/DogDogData" element={<DogDog/>} />
+          <Route path='/CatCatData' element={<CatCat/>} />
+          <Route path='/RabbitRabbitData' element={<RabbitRabbit/>} />
+          <Route path='/ParrotData' element={<Parrot/>} />
+          <Route path='/Elephant2Data' element={<Elephant2/>} />
+          <Route path='/MonkeyData' element={<Monkey/>} />
+          <Route path='/BookNow' element={<BookNow/>} />
+          <Route path ="/daycare" element ={<Daycare/>}/>
+          <Route path="/Bookfordaycare" element = {<UserBookforDaycareNavbar/>}/>
+          <Route path="/Location" element = {<Location/>}/>
+          <Route path="/Location1" element ={<Location1/>}/>
+          <Route path="/Location2" element ={<Location2/>}/>
+          <Route path="/Location3" element ={<Location3/>}/>
+          <Route path="/Location4" element = {<Location4/>}/>
+          <Route path="/Location5" element ={<Location5/>}/>
 
-          <Route path="/vaccinationform" element={<VaccinationForm/>}/>
-          <Route path="/homevisitform" element={<Homevisitform/>}/>
-          <Route path="/hospitalizationform" element={<Hospitalizationform/>}/>
+
           <Route path="/appointmentslots" element={<SlotAppointmentTable/>}/>
           
-          <Route path="/assistance" element={<UserAssistance/>}/>
-          <Route path="/sales" element={<Sales/>}/>
-          <Route path="/purchase" element={<Purchase/>}/>
-          <Route path="/funding" element={<Funding/>}/>
-          <Route path="/shows" element={<Shows/>}/>
-          <Route path="/history" element={<History/>}/>
-          <Route path="/Cart" element={<UserCart/>}/>
-          <Route path="/userpets" element={<UserPets/>}/>
-          <Route path="/Modal" elementr={<Modal/>}/>
-          <Route path="/useritems" element={<UserItems/>}/>
+
           <Route path="/horseservices" element={<Horseservices/>}/>
           <Route path="/birdservices" element={<Birdservices/>}/>
           <Route path="/elephantservices" element={<ElephantServices/>}/>
@@ -270,15 +357,6 @@ function App() {
           <Route path="/camelservices" element={<CamelServices/>}/>
           {/* <Route path="/drappointment" element={<DrAppointment/>}/> */}
           <Route path="/drlist" element={<DrList/>}/>
-
-          <Route path ="/daycare" element ={<Daycare/>}/>
-          <Route path="/Bookfordaycare" element = {<Bookfordaycare/>}/>
-          <Route path="/Location" element = {<Location/>}/>
-          <Route path="/Location1" element ={<Location1/>}/>
-          <Route path="/Location2" element ={<Location2/>}/>
-          <Route path="/Location3" element ={<Location3/>}/>
-          <Route path="/Location4" element = {<Location4/>}/>
-          <Route path="/Location5" element ={<Location5/>}/>
           
           <Route path="/forgetadmin" element={<ForgetAdmin/>}/>
           <Route path="/cameladoption" element={<Cameladoption/>}/>
@@ -301,17 +379,15 @@ function App() {
              <Route path="/Items/Home" element={<Home/>} />
              <Route path="/Accessories" element={<Accessories/>} />
              <Route path="/Accessories/Home" element={<Home/>} />
-             <Route path="/Adoption" element={<Adoption/>} />
               <Route path="/Navbar" element={<Navbar/>}/> 
-              <Route path="/Payment" element={<Payment/>} />
-              <Route path="/useraddress" element={<Address/>}/>
+
               <Route path="/Signout" element={<Signout/>} />
           {/* Uncomment the line below if you have a component for UserList */}
           {/* <Route path="/listuser" element={<UserList />} /> */}
 
 
               {/* <Route path="/userhome" element={<UserHome/>} /> */}
-              <Route path="/doctordashboard" element={<DoctorHome/>}/>
+              {/* <Route path="/doctordashboard" element={<DoctorHome/>}/> */}
               {/* <Route path='/doctorprofile' element={<DoctorProfile/>}/> */}
               {/* <Route path='/profile' emenet={<Profile/>}/> */}
               <Route path="/homevisit" element={<Homevisit/>}/>
@@ -325,25 +401,15 @@ function App() {
               <Route path="/doctorvalidate" element={<ValidateDoctor/>}/>
               {/* <Route path="/profile" element={<DoctorProfile/>}/> */}
               <Route path="/appointmentform" element={<AppointmentForm/>}/>
-              <Route path="/drpriya" element={<DrPriya/>}/>
+              {/* <Route path="/drpriya" element={<DrPriya/>}/>
               <Route path="/drmadhu" element={<DrMadhu/>}/>
               <Route path="/drmishra" element={<DrMishra/>}/>
               <Route path="/drnandan" element={<DrNandan/>}/>
               <Route path="/drarjun" element={<DrArjun/>}/>
               <Route path="/drrohan" element={<Drrohan/>}/>
               <Route path="/drmahesh" element={<DrMahesh/>}/>
-              <Route path="/dryogitha" element={<DrYogitha/>}/>
+              <Route path="/dryogitha" element={<DrYogitha/>}/> */}
 
-              <Route path="/doctorslotbooking" element={<DoctorSlotBooking/>}/>
-
-              <Route path="/training" element={<Training22/>} />
-              <Route path="/DogDogData" element={<DogDog/>} />
-              <Route path='/CatCatData' element={<CatCat/>} />
-              <Route path='/RabbitRabbitData' element={<RabbitRabbit/>} />
-              <Route path='/ParrotData' element={<Parrot/>} />
-              <Route path='/Elephant2Data' element={<Elephant2/>} />
-              <Route path='/MonkeyData' element={<Monkey/>} />
-              <Route path='/BookNow' element={<BookNow/>} />
 
         </Routes>
       </Router>

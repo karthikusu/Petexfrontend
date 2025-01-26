@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Commonnav from './CommonNav';
 
 const ReportForm = () => {
   const [formData, setFormData] = useState({
@@ -102,9 +101,8 @@ if (!formData.userMoblieNumber) {
   return (
     <>
     
-    <div style={{backgroundColor:"rgb(201, 184, 255)", backgroundAttachment:"fixed", width:"100%", marginTop:"0%"}}>
-    <Commonnav/>
-    <form onSubmit={handleSubmit} style={formStyle} >
+    <div style={{backgroundColor:"rgb(201, 184, 255)", position:"absolute", width:"100%", marginTop:"0%"}}>
+    <form onSubmit={handleSubmit} style={formStyle}>
       <h1 style={{ textAlign: "center" }}>Report Lost</h1>
       <div style={formGroup}>
         <label htmlFor="userName">User Name:</label>
@@ -173,7 +171,9 @@ const formStyle = {
   boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)',
   borderRadius: '5px',
   width:"50%",
-  marginLeft: "10%"
+  marginLeft: "10%",
+  marginTop:"2%",
+  opacity: 0.8
 };
 
 const formGroup = {

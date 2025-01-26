@@ -255,13 +255,13 @@ function RecentOrders() {
         <div className="haricard"style={{background: 'skyblue', fontSize: '24px'}}> <Link to="/reportlost" style={{fontSize:"20px"}}>Reportlost<br />
          </Link>
         </div>
-        <div className="haricard"style={{background:'red'}}><Link to="/adminadaption" style={{fontSize:"20px"}}>Adaption<br />
+        <div className="haricard"style={{background:'red'}}><Link to="/adminadoption" style={{fontSize:"20px"}}>Adaption<br />
           </Link>
         </div>
         <div className="haricard"style={{background:'pink'}}><Link to="/adminfunding" style={{fontSize:"20px"}}>Funding<br />
           </Link>
         </div>
-        <div className="haricard"style={{background:'orange'}}><Link to="/appointment" style={{fontSize:"20px"}}>Shows<br />
+        <div className="haricard"style={{background:'orange'}}><Link to="/adminpetshow" style={{fontSize:"20px"}}>Shows<br />
           </Link>
         </div>
       </div>

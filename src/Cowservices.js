@@ -1,105 +1,3 @@
-// import React from "react";
-// // import Navpet from "./Navpet";
-// import { Link } from "react-router-dom";
-// // import Sidebar from "./Sidebar";
-
-// function Cowservices(){
-//     return(
-
-//         <>
-//         <Sidebar/>
-//         <button type="button" class="btn btn-primary" style={{ marginLeft  : "20%",marginTop : "2%", width: "5%", height: "4vh", fontSize: "1.5rem"}}>Dog</button>
-//         <Link to="/CatServices"><button  type="button" class="btn btn-primary"style={{ marginTop : "2%", width: "5%", height: "4vh", marginLeft: "1%", fontSize: "1.5rem"}}>Cat</button></Link>
-//         <Link to="/Sheepservices"><button  type="button" class="btn btn-primary"style={{ marginTop : "2%", width: "5%", height: "4vh", marginLeft: "1%", fontSize: "1.5rem"}}>Sheep</button></Link>
-//         <Link to="/Cowservices"> <button type="button" class="btn btn-primary" style={{ marginTop : "2%", width: "5%", height: "4vh", marginLeft: "1%", fontSize: "1.5rem"}}>Cow</button></Link>
-//         <Link to="/Camelservices"><button type="button" class="btn btn-primary" style={{ marginTop : "2%", width: "5%", height: "4vh", marginLeft: "1%", fontSize: "1.5rem"}}>Camel</button></Link>
-//         <Link to="/Elephantservices"><button type="button" class="btn btn-primary" style={{ marginTop : "2%", width: "7%", height: "4vh", marginLeft: "1%", fontSize: "1.5rem"}}>Elephant</button></Link>
-//         <Link to="/Birdservices"> <button  type="button" class="btn btn-primary"style={{ marginTop : "2%", width: "5%", height: "4vh", marginLeft: "1%", fontSize: "1.5rem"}}>Birds</button></Link>
-//         <Link to="/Horseservices"> <button  type="button" class="btn btn-primary"style={{ marginTop : "2%", width: "5%", height: "4vh", marginLeft: "1%", fontSize: "1.5rem"}}>Horse</button></Link>
-        
-        
-        
-        
-//         <div style={{display: "flex"}}>
-//         <div style={{border: "2px solid", width: "18.4%", marginLeft: "20%", marginTop : "2%"}}>
-//         <div class="card" style={{width: "18rem"}}>
-//   <img src="https://images.pexels.com/photos/5749799/pexels-photo-5749799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="..." style={{ width : "130%",height : "30vh"}}/>
-//   <div class="card-body" style={{marginRight: "-25%", marginLeft: '2%'}}>
-//     <h3 class="card-title" style={{textAlign: "center"}}>Day Care</h3>
-//     <p class="card-text" style={{textAlign: "center"}}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <Link to= "/Payment"><a href="#" class="btn btn-primary" style={{marginLeft: "33%", marginTop: "-5%"}}>Click Here</a> </Link>
-//   </div>
-// </div>
-// </div>
-
-// <div style={{border: "2px solid", width: "18.4%", marginLeft: "4%", marginTop : "2%"}}>
-//         <div class="card" style={{width: "18rem"}}>
-//   <img src="https://images.pexels.com/photos/7210262/pexels-photo-7210262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="..." style={{ width : "130%",height : "30vh"}}/>
-//   <div class="card-body" style={{marginRight: "-25%", marginLeft: '2%'}}>
-//     <h3 class="card-title" style={{textAlign: "center"}}>Trainng</h3>
-//     <p class="card-text" style={{textAlign: "center"}}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <Link to= "/Payment"><a href="#" class="btn btn-primary" style={{marginLeft: "33%", marginTop: "-5%"}}>Click Here</a> </Link>
-//   </div>
-// </div>
-// </div>
-
-// <div style={{border: "2px solid", width: "18.4%", marginLeft: "4%", marginTop : "2%"}}>
-//         <div class="card" style={{width: "18rem"}}>
-//   <img src="https://images.pexels.com/photos/5745223/pexels-photo-5745223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="..." style={{ width : "130%",height : "30vh"}}/>
-//   <div class="card-body" style={{marginRight: "-25%", marginLeft: '2%'}}>
-//     <h3 class="card-title" style={{textAlign: "center"}}>Boarding</h3>
-//     <p class="card-text" style={{textAlign: "center"}}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <Link to= "/Payment"> <a href="#" class="btn btn-primary" style={{marginLeft: "33%", marginTop: "-5%"}}>Click Here</a> </Link>
-//   </div>
-// </div>
-// </div>
-// </div>
-
-
-
-
-// <div style={{display: "flex"}}>
-// <div style={{border: "2px solid", width: "18.4%", marginLeft: "20%", marginTop : "2%"}}>
-//         <div class="card" style={{width: "18rem"}}>
-//   <img src="https://images.pexels.com/photos/731022/pexels-photo-731022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="..." style={{ width : "130%",height : "30vh"}}/>
-//   <div class="card-body" style={{marginRight: "-25%", marginLeft: '2%'}}>
-//     <h3 class="card-title" style={{textAlign: "center"}}>Breeding</h3>
-//     <p class="card-text" style={{textAlign: "center"}}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <Link to= "/Payment"><a href="#" class="btn btn-primary" style={{marginLeft: "33%", marginTop: "-5%"}}>Click Here</a> </Link>
-//   </div>
-// </div>
-// </div>
-
-// <div style={{border: "2px solid", width: "18.4%", marginLeft: "4%", marginTop : "2%"}}>
-//         <div class="card" style={{width: "18rem"}}>
-//   <img src="https://images.pexels.com/photos/19145872/pexels-photo-19145872/free-photo-of-dog-groomer-trimming-dogs-nails.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="..." style={{ width : "130%",height : "30vh"}}/>
-//   <div class="card-body" style={{marginRight: "-25%", marginLeft: '2%'}}>
-//     <h3 class="card-title" style={{textAlign: "center"}}>Grooming</h3>
-//     <p class="card-text" style={{textAlign: "center"}}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <Link to= "/Payment"><a href="#" class="btn btn-primary" style={{marginLeft: "33%", marginTop: "-5%"}}>Click Here</a> </Link>
-//   </div>
-// </div>
-// </div>
-
-// <div style={{border: "2px solid", width: "18.4%", marginLeft: "4%", marginTop : "2%"}}>
-//         <div class="card" style={{width: "18rem"}}>
-//   <img src="https://images.pexels.com/photos/20292579/pexels-photo-20292579/free-photo-of-an-australian-shepherd-standing-on-a-field-with-purple-heather.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="..." style={{ width : "130%",height : "30vh"}}/>
-//   <div class="card-body" style={{marginRight: "-25%", marginLeft: '2%'}}>
-//     <h3 class="card-title" style={{textAlign: "center"}}>Nutrition</h3>
-//     <p class="card-text" style={{textAlign: "center"}}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <Link to= "/Payment"><a href="#" class="btn btn-primary" style={{marginLeft: "33%", marginTop: "-5%"}}>Click Here</a> </Link>
-//   </div>
-// </div>
-// </div>
-// </div>
-       
-        
-//         </>
-//     )
-// }
-// export default Cowservices;
-
-
 import { Link } from "react-router-dom";
 import React , {useState , useEffect} from "react";
 import CommonNav from './CommonNav';
@@ -108,7 +6,7 @@ import CatServices from './CatServices';
 // import CowServices from "./Cowservices";
 import CamelServices from "./Camelservices";
 import HorseServices from "./Horseservices";
-import BirdServices from "./UserAssistance";
+import BirdServices from "./Birdservices";
 import ElephantServices from "./Elephantservices";
 import SheepService from './Sheepservices';
 import UserServices from './UserServices';

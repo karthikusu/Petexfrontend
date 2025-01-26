@@ -18,23 +18,23 @@ function VendorProfilePage() {
         estsince: '',
         socialmedia: ''
     });
-    const [userDetails, setUserDetails] = useState(null);
+    const [vendorDetails, setVendorDetails] = useState(null);
     const [editingField, setEditingField] = useState('');
     const [originalUser, setOriginalUser] = useState(null);
 
     useEffect(() => {
         // Fetch user details from local storage
-        const storedUserDetails = localStorage.getItem('userDetails');
+        const storedUserDetails = localStorage.getItem('vendorDetails');
         if (storedUserDetails) {
-            setUserDetails(JSON.parse(storedUserDetails));
+            setVendorDetails(JSON.parse(storedUserDetails));
         }
     }, []);
 
     useEffect(() => {
-        if (userDetails && userDetails.vendorId) {
-            fetchUserData(userDetails.vendorId);
+        if (vendorDetails && vendorDetails.vendorId) {
+            fetchUserData(vendorDetails.vendorId);
         }
-    }, [userDetails]);
+    }, [vendorDetails]);
 
     const fetchUserData = async (vendorId) => {
         try {
@@ -55,7 +55,7 @@ function VendorProfilePage() {
 
     const handleSave = async () => {
         try {
-            const response = await fetch(`http://localhost:9001/petex/update/${userDetails.vendorId}`, {
+            const response = await fetch(`http://localhost:9001/petex/update/${vendorDetails.vendorId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ function VendorProfilePage() {
     };
 
     const handleCancel = () => {
-        setUserDetails(originalUser);
+        setVendorDetails(originalUser);
         setEditingField('');
     };
 
@@ -108,7 +108,7 @@ function VendorProfilePage() {
             }}>
                 <h2 style={{ fontSize: '1.5rem', marginBottom: '20px', color: '#333', textAlign: 'center' }}>Vendor Profile</h2>
 
-                {userDetails ? (
+                {vendorDetails ? (
                     <div>
                         {/* Existing user details */}
                         {/* Add input fields for new vendor details */}

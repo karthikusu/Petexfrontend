@@ -1,7 +1,66 @@
-import React, { useState  } from 'react';
-import { useNavigate , Link } from 'react-router-dom';
-import BG2 from './assets/Loginbg.png';
+// import React, { useState  } from 'react';
+// import { useNavigate , Link } from 'react-router-dom';
+// import BG2 from './assets/Loginbg.png';
 
+
+// function Login() {
+//   const [formData, setFormData] = useState({
+//     email: '',
+//     pwd: ''
+//   });
+//   const [error, setError] = useState('');
+//   const navigate = useNavigate();
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData({ ...formData, [name]: value });
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     const { email, pwd } = formData;
+  
+//     try {
+//       const response = await fetch('http://localhost:9000/api/users/login', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ email, pwd }),
+//       });
+  
+//       if (!response.ok) {
+//         throw new Error('Login failed: Unexpected response');
+//       }
+      
+//       const loginResponseText = await response.text();
+  
+//       if (loginResponseText === "login success") {
+//         // Fetch user details
+//         const userDetailsResponse = await fetch(`http://localhost:9000/api/users/getByEmail/${email}`);
+//         if (!userDetailsResponse.ok) {
+//           throw new Error('Failed to fetch user details');
+//         }
+        
+//         const userDetails = await userDetailsResponse.json();
+//         localStorage.setItem('userDetails', JSON.stringify(userDetails));
+        
+      
+//         navigate('/usernavbar', { state: { userDetails } }); // Pass user details in state
+//       } else {
+//         setError('Invalid email or password');
+//       }
+//     } catch (error) {
+//       console.error('Error during login:', error.message);
+//       setError(`Error! ${error.message}`);
+//     }
+//   };
+
+
+// Login Component
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import BG2 from './assets/Loginbg.png';
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -19,43 +78,25 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, pwd } = formData;
-  
+
     try {
-      const response = await fetch('http://localhost:9000/api/users/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, pwd }),
-      });
-  
-      if (!response.ok) {
-        throw new Error('Login failed: Unexpected response');
+      // Perform login request
+
+      // After successful login
+      const userDetailsResponse = await fetch(`http://localhost:9000/api/users/getByEmail/${email}`);
+      if (!userDetailsResponse.ok) {
+        throw new Error('Failed to fetch user details');
       }
-      
-      const loginResponseText = await response.text();
-  
-      if (loginResponseText === "login success") {
-        // Fetch user details
-        const userDetailsResponse = await fetch(`http://localhost:9000/api/users/getByEmail/${email}`);
-        if (!userDetailsResponse.ok) {
-          throw new Error('Failed to fetch user details');
-        }
-        
-        const userDetails = await userDetailsResponse.json();
-        localStorage.setItem('userDetails', JSON.stringify(userDetails));
-        
-      
-        navigate('/usernavbar', { state: { userDetails } }); // Pass user details in state
-      } else {
-        setError('Invalid email or password');
-      }
+
+      const userDetails = await userDetailsResponse.json();
+      localStorage.setItem('userDetails', JSON.stringify(userDetails));
+
+      navigate('/usernavbar', { state: { userDetails } }); // Pass user details in state
     } catch (error) {
       console.error('Error during login:', error.message);
       setError(`Error! ${error.message}`);
     }
   };
-
   return (
     <div className="backgroundContainer" style={{ backgroundImage: `url(${BG2})`, height: "600px", color:"white" }}>
       <div className='formContainer'>

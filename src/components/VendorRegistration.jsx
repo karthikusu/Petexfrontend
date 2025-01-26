@@ -102,7 +102,7 @@ const NewRegister = () => {
         const response = await axios.post('http://localhost:9001/petex/vendorsignup', formValues);
         console.log('Registration successful:', response.data);
         alert('Registration successful');
-        navigate("/vendorlogin");
+        navigate("/vendorprofilelogin");
       } catch (error) {
         console.error('Registration failed:', error);
       }

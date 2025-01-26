@@ -161,7 +161,7 @@ const Vendornavbar = () => {
   }
   
   .selected-option {
-    padding: 20px;
+    padding: 10px;
   }
   
   
@@ -188,7 +188,7 @@ const Vendornavbar = () => {
   <div className="iconic">
     <a href="#" onClick={() => handleOptionClick('Profile')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-user"></i> Profile</a>
     <a href="#" onClick={() => handleOptionClick('Appointments')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-calendar-check"></i> Appointments</a>
-    <a href="#" onClick={() => handleOptionClick('HomeVisit')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-home"></i> Home Visit</a>
+    {/* <a href="#" onClick={() => handleOptionClick('HomeVisit')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-home"></i> Home Visit</a> */}
     <a href="#" onClick={() => handleOptionClick('Hospitalization')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-hospital"></i> Hospitalization</a>
     <a href="#" onClick={() => handleOptionClick('Reports')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-file-alt"></i> Reports</a>
     <a href="#" onClick={() => handleOptionClick('Vaccination')} style={{ textDecoration: "none", color: "white" }}><i className="fa fa-syringe"></i> Vaccination Request</a>
@@ -210,7 +210,7 @@ const Vendornavbar = () => {
         {(imageVisible && (selectedOption === null || selectedOption === 'img')) && (
         <div className="selected-option">
           <div>
-            <img src='https://wallpapers.com/images/high/1440p-disney-background-p2hc3ek94p3qzg6s.webp'style={{width:"100%"}}></img>
+            <img src='https://static.vecteezy.com/system/resources/previews/005/297/486/non_2x/healthcare-and-medicine-concept-smart-medical-doctor-working-with-stethoscope-at-modern-hospital-free-photo.jpg'style={{width:"100%"}}></img>
           </div>
         </div>
         )}

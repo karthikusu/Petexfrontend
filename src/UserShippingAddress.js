@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 // import "./Addrestable.css"
 import axios from 'axios';
+import Image from './images/DogDog.jpg';
 
 const Addrestable = () => {
     const [newErrors, setErrors] = useState({});
@@ -96,28 +97,21 @@ const Addrestable = () => {
     return(
         <>
             <div className="adres">
-                        <div className="forminer">
-                            <form className="forst" onSubmit={handleFormSubmit} style={{width:"50%", marginLeft:"10%",marginTop:"5%"}}>
-                                <h4 style={{ textAlign:'center',fontSize:'26px', color:'#0947a3'}}>Address Table</h4>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td><label className="ad_lables">Address:</label></td>
-                                            <td>
+                        <div className="forminer" style={{background:`url(${Image})`, height:"115vh", position:"absolute", width:"84%", backgroundSize:"cover"}}>
+                            <form className="forst" onSubmit={handleFormSubmit} style={{width:"40%", marginLeft:"10%",marginTop:"5%",  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.8)",position:"absolute"}}>
+                                <h4 style={{ textAlign:'center',fontSize:'26px', color:'white'}}>Address Table</h4>
+                                <p><label className="ad_lables" style={{color:"white", marginLeft:"5%", fontSize:"18px"}}>Address:</label></p>
                                                 <input
                                                     type="text"
                                                     placeholder="Enter your address"
                                                     name="address"
                                                     value={formData.address}
                                                     onChange={handleInputChange}
-                                                    style={{width:"90%"}}
+                                                    style={{width:"90%", marginLeft:"5%"}}
                                                 />
                                                 {newErrors.address && <span className='error-message'>{newErrors.address}</span>}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label className="ad_lables">House No:</label></td>
-                                            <td>
+                                <div>
+                                <p><label className="ad_lables" style={{color:"white", marginLeft:"5%", fontSize:"18px"}}>House No:</label></p>
                                                 <input
                                                     type="number"
                                                     id="houseno"
@@ -125,57 +119,44 @@ const Addrestable = () => {
                                                     placeholder="Enter your House No"
                                                     value={formData.houseno}
                                                     onChange={handleInputChange}
+                                                    style={{width:"90%", marginLeft:"5%"}}
                                                 />
                                                 {newErrors.houseno && <span className="error-message">{newErrors.houseno}</span>}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label className="ad_lables">Area:</label></td>
-                                            <td>
+                                                </div>
+                                <p><label className="ad_lables" style={{color:"white", marginLeft:"5%", fontSize:"18px"}}>Area:</label></p>
                                                 <input
                                                     type="text"
                                                     placeholder="Enter your Area"
                                                     name="area"
                                                     value={formData.area}
                                                     onChange={handleInputChange}
+                                                    style={{width:"90%", marginLeft:"5%"}}
                                                 />
                                                 {newErrors.area && <span className='error-message'>{newErrors.area}</span>}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label className="ad_lables">Land Mark:</label></td>
-                                            <td>
+                                <p><label className="ad_lables" style={{color:"white", marginLeft:"5%", fontSize:"18px"}}>Land Mark:</label></p>
                                                 <input
                                                     type="text"
                                                     placeholder="Enter land mark"
                                                     name="landMark"
                                                     value={formData.landMark}
                                                     onChange={handleInputChange}
+                                                    style={{width:"90%", marginLeft:"5%"}}
                                                 />
                                                 {newErrors.landMark && <span className='error-message'>{newErrors.landMark}</span>}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><label className="ad_lables">Contact :</label></td>
-                                            <td>
+                                <p><label className="ad_lables" style={{color:"white", marginLeft:"5%", fontSize:"18px"}}>Contact :</label></p>
                                                 <input
                                                     type="number"
                                                     placeholder="Enter contact number here"
                                                     name="contact"
                                                     value={formData.contact}
                                                     onChange={handleInputChange}
+                                                    style={{width:"90%", marginLeft:"5%"}}
                                                 />
                                                 {newErrors.contact && <span className='error-message'>{newErrors.contact}</span>}
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td>
-                                                <button type="submit">Submit</button><br/>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                          
+                                        <div>
+                                            <button type="submit" style={{marginLeft:"5%", marginTop:"2%"}}>Submit</button><br/>
+                                        </div>
                             </form>
                         </div>
                     </div>

@@ -85,6 +85,9 @@ function VaccinationForm() {
             alert('Booking successful');
             setFormData({
                 ...formData,
+                customerName: '',
+                customerEmail: '',
+                customerPhno: '',
                 date: '',
                 time: '',
                 description: ''

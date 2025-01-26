@@ -156,7 +156,7 @@ function Services() {
 
                 <div className="card-container">
                     <div className="card">
-                    <img src="https://images.pexels.com/photos/19145872/pexels-photo-19145872/free-photo-of-dog-groomer-trimming-dogs-nails.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="..." style={{ width: "100%", height: "auto" }} />
+                    <img src="https://images.pexels.com/photos/19145872/pexels-photo-19145872/free-photo-of-dog-groomer-trimming-dogs-nails.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="..." style={{ width: "100%", height: "200px" }} />
                             <div className="card-body">
                             <h3 className="card-title">Grooming</h3>
                             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

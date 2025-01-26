@@ -84,6 +84,9 @@ function HomeVisitForm() {
             alert('Booking successful');
             setFormData({
                 ...formData,
+                customerName: '',
+                customerEmail: '',
+                customerPhno: '',
                 date: '',
                 time: '',
                 description: ''

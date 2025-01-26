@@ -87,18 +87,18 @@ function NavigationBar() {
                 <b style={{color:"white", marginLeft:"10px"}}>Home</b>
               </Link>
             </li>
-            {/* <li className="nav-item">
-              <Link className="nav-link" to="/signupoptions" style={{marginLeft:"40px"}}>
-                <img src={profile} alt="Profile" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
-                <b style={{color:"white", marginLeft:"10px"}}>SignUp</b>
-              </Link>
-            </li> */}
                <li className="nav-item">
               <Link className="nav-link" to="/contactus" style={{marginLeft:"50px"}}>
                 <img src={cart} alt="Cart" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
                 <b style={{color:"white", marginLeft:"10px"}}>Contact</b>
               </Link>
             </li>
+            {/* <li className="nav-item">
+              <Link className="nav-link" to="/fundingdetailspage" style={{marginLeft:"50px"}}>
+                <img src={cart} alt="Cart" style={{ height: "30px", width: "30px", borderRadius: "50%" }} />
+                <b style={{color:"white", marginLeft:"10px"}}>Funding</b>
+              </Link>
+            </li> */}
 
             <form className="form-inline my-2 my-lg-0" onSubmit={(e) => e.preventDefault()} style={{ marginLeft: "30px" }}>
           <input
@@ -146,10 +146,10 @@ function NavigationBar() {
         </button>
         {showDropdown && (
         <div className="dropdown-menu show" aria-labelledby="dropdownMenuButton">
-            <button className="dropdown-item" onClick={() => handleOptionClick('Doctor')}>Doctor</button>
-            <button className="dropdown-item" onClick={() => handleOptionClick('Vendor')}>Vendor</button>
             <button className="dropdown-item" onClick={() => handleOptionClick('Admin')}>Admin</button>
+            <button className="dropdown-item" onClick={() => handleOptionClick('Doctor')}>Doctor</button>
             <button className="dropdown-item" onClick={() => handleOptionClick('User')}>User</button>
+            <button className="dropdown-item" onClick={() => handleOptionClick('Vendor')}>Vendor</button>
         </div>
         )}
         </div>

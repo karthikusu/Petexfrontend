@@ -28,7 +28,7 @@ const Pets = () => {
 
   const fetchProductsByCategory = async (category) => {
     try {
-      const response = await axios.get(`http://localhost:9015/products/${category}`);
+      const response = await axios.get(`http://localhost:9015/pets/${category}`);
       setProducts(response.data);
     } catch (error) {
       console.error(`Error fetching products for ${category} category:`, error);
@@ -37,7 +37,7 @@ const Pets = () => {
 
   const fetchAllProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:9015/products');
+      const response = await axios.get('http://localhost:9015/pets');
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);

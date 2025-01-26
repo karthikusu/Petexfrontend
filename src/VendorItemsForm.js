@@ -37,6 +37,9 @@ function ProductForm() {
       });
       console.log('Data saved successfully', response.data);
       setSubmitStatus('success');
+
+      // Store product details in local storage
+      localStorage.setItem('ProductDetails', JSON.stringify(productData));
     } catch (error) {
       console.error('Error saving data', error);
       setSubmitStatus('error');

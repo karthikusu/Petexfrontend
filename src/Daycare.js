@@ -8,13 +8,12 @@ import vendorimage2 from "./images/vendorimages4.jpg";
 import vendorimage3 from "./images/vendorlionimage.jpg";
 import vendorimage4 from "./images/vendorimage5.jpg";
 import vendorimage5 from "./images/vendorimage6.webp";
-
+import UserDaycare from './UserDayCare';
 function Daycare() {
   return (
     <>
       <div className="petday">
         <div className="pet-header">
-          <h1><a href="/usernavbar" style={{textDecoration:"none", color:"black"}}>Home</a></h1>
           <img src="https://branition.com/assets/img/users/logos/7707-TVtrVNf.webp?v2" alt="" />
           <h1>Day Care</h1>
         </div>
@@ -31,7 +30,8 @@ function Daycare() {
         <p>Day Care for pets is a great way for pet owners to provide their furry friends with a safe and fun environment while they are away from home. Day Care is a great option for busy pet owners who don't have the time to provide their pets with the care they need on a daily basis. Day Care typically consists of supervised activities and playtime that can help keep pets active and healthy while owners are away</p>
       </div>
 
-      <div className="daycare-cards">
+      <UserDaycare/>
+      {/* <div className="daycare-cards">
         <div className="daycare-card">
           <img src={vendorimage} alt="" />
           <div className="card-details">
@@ -143,10 +143,10 @@ function Daycare() {
               <span className="fa fa-star"></span>
             </div>
             <Link to="/Bookfordaycare"><button className="styled-button">Book Now</button></Link>
-          </div>
-        </div>
-        {/* Repeat similar structure for other daycare cards */}
-      </div>
+          </div> */}
+        {/* </div>
+        
+      </div> */}
     </>
   );
 }

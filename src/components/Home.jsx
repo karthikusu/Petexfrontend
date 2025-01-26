@@ -53,6 +53,7 @@ import doctor4 from '../assets/doctor4.jpg';
 import feeding from '../assets/feeding.jpg';
 import cow from '../assets/Cow.jpg';
 import camel from '../assets/camel1.jpg';
+import NeedFunding from './NeedFunding.jsx';
 
 
 import { useState } from 'react';
@@ -391,7 +392,11 @@ function Home() {
   </div>
 </div>
 
-
+    <div>
+    <NeedFunding/>
+    {/* <h3>Want to give fundings for pets ? </h3> */}
+    <h4 style={{textAlign:"center"}}><a href='/fundingdetails' style={{ textDecoration:"none", color:"black"}}>Click Here To Give Funds</a></h4> 
+    </div>
     <div style={{marginTop:"3%"}}>
       <Footer/>
     </div>

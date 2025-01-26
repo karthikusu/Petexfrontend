@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { getCartDetails } from './AuthContext';
 import './Cart.css';
 import { Link } from 'react-router-dom';
-import Sidebar from './CommonNav';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const [cartDetails, setCartDetails] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,15 +26,27 @@ const Cart = () => {
   }, []);
   
   const calculateTotalPrice = (cartItems) => {
-    let subtotal = 0;
-    cartItems.forEach((item) => {
-      subtotal += item.price * item.quantity;
+    let totalSubtotal = 0; // Change the variable name to avoid conflict
+    const priceDetails = cartItems.map(item => {
+      const subtotal = item.price * item.quantity;
+      totalSubtotal += subtotal; // Update totalSubtotal for each item
+      return {
+        name: item.name,
+        quantity: item.quantity, // Include quantity
+        price: subtotal, // Include subtotal
+      };
     });
-    const gst = subtotal * 0.18; 
-    const discount = subtotal * 0.05; 
-    const total = (subtotal + gst - discount).toFixed(2); 
-    setTotalPrice(total); 
+  
+    const gst = totalSubtotal * 0.18; 
+    const discount = totalSubtotal * 0.05; 
+    const total = (totalSubtotal + gst - discount).toFixed(2); 
+  
+    // Update priceDetails with the new subtotal
+    localStorage.setItem('priceDetails', JSON.stringify(priceDetails));
+    setTotalPrice(total);
   };
+  
+
 
   const increaseQuantity = (index) => {
     const updatedCartDetails = [...cartDetails];
@@ -62,12 +75,31 @@ const Cart = () => {
   };
 
   const handleCheckout = () => {
-    alert('Address Added Successfully');
+    // Retrieve product IDs from cart items in local storage
+    const storedProductIds = JSON.parse(localStorage.getItem('cartItems')) || [];
+    
+    // Extract product IDs from cart items
+    const productIds = storedProductIds.map(item => item.productId);
+    
+    const userId = localStorage.getItem('userId');
+    // Store product IDs in local storage (optional, since they're already stored)
+    localStorage.setItem('productIds', JSON.stringify(productIds));
+  
+    // Log the product IDs in the console
+    console.log('Product IDs:', productIds , userId);
+  
+    // Proceed to checkout or any other logic
+    alert('Add Shipping Address To Confirm The Order Placement');
+      // Extract product IDs from cart items
+  // const productIds = storedProductIds.map(item => item.productId);
+  
+  // Navigate to the payment page and pass userId and productIds as state
+  navigate("/payment", { state: { userId, productIds } });
   };
+  
 
   return (
     <>
-      <Sidebar/>
       <div className="cart-containerX">
         <ul>
           {cartDetails.map((item, index) => (
@@ -95,7 +127,9 @@ const Cart = () => {
           <p>Total Price (incl. GST and discount): {(totalPrice - totalPrice * 0.05 + totalPrice * 0.18).toFixed(2)}</p>
         </div>
         <div className="cart-checkout">
-          <Link to="/useraddress"><button onClick={handleCheckout}>Checkout</button></Link>
+          <button onClick={handleCheckout}>Checkout</button>
+          {/* Redirect to the user address page on checkout */}
+          {/* <Link to="/Payment">Add Shipping Address</Link> */}
         </div>
       </div>
     </>
