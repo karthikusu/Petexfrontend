@@ -91,7 +91,7 @@ import ValidateVendor from './components/ValidateVendor';
 import ConfirmVendor from './components/ConfirmVendor'; 
 import Vendornavbar from './Vendornavbar.js';
 import VendorDashBoard from './Vendordashboard';
-import ReportLost from './ReportLost.js';
+import ReportLost from './Reportlost.js';
 import VendorItemsForm from './VendorItemsForm.js';
 import PetTypesForm from './PetTypesForm.js';
 import Grooming from './Grooming.js';
